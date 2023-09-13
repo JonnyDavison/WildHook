@@ -1,14 +1,17 @@
 ---
 name: 'USER STORY: <title>'
-about: As a **role** I can **Capability** so that **Benefit**
+about: ''
 title: ''
 labels: ''
 assignees: JonnyDavison
 
 ---
 
+As a **role** I can **Capability** so that **Benefit**
+
 **Acceptance Criteria**
 
-([ ]) Criteria
-([ ]) Criteria
-([ ]) Criteria
+- [ ] Criteria
+- [ ] Criteria
+- [ ] Criteria
+

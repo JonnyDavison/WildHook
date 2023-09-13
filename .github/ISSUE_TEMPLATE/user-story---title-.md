@@ -1,7 +1,7 @@
 ---
 name: 'USER STORY: <title>'
 about: 'WildHook User Story'
-title: 'As a **role** I can **Capability** so that **Benefit**'
+title: 'USER STORY #: <title>'
 labels: ''
 assignees: JonnyDavison
 

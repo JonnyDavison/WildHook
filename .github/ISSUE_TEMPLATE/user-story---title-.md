@@ -1,6 +1,6 @@
 ---
 name: 'USER STORY: <title>'
-about: ''
+about: 'WildHook User Story'
 title: ''
 labels: ''
 assignees: JonnyDavison

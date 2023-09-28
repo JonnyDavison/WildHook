@@ -372,7 +372,7 @@ Final Schema
 
 ### Accent Colors
 - **Earthy Brown (#8B5A2B)**: Adding an earthy tone, connecting with the outdoor and adventurous theme.
-- **Aqua Blue (#00BFFF)**: Infusing vibrancy, representing the aquatic environment of fishing.
+- **Yale Blue (#0D3D6D)**: Infusing vibrancy, representing the aquatic environment of fishing.
 - **Gold Accent (#DAA520)**: Adding a touch of premium quality and sophistication.
 
 

@@ -328,9 +328,86 @@ The Flowchart  XYZ
 ### Skeleton
 <hr>
 
-**Wireframes**
+## Wireframes
 <br>
-Wire frames where hand drawn as the developer enjoys hand drawing/design work
+
+Wire frames have been created using [Figma](https://www.figma.com/)
+
+<details> 
+  <summary>Home Page</summary> 
+  <img src='media/wireframes/home_wf.png'>
+</details>
+
+<details> 
+  <summary>Header</summary> 
+  <img src='media/wireframes/header_wf.png'>
+</details>
+
+<details> 
+  <summary>Footer</summary> 
+  <img src='media/wireframes/footer_wf.png'>
+</details>
+
+<details> 
+  <summary>Latest Arrivals</summary> 
+  <img src='media/wireframes/latest_wf.png'>
+</details>
+
+<details> 
+  <summary>Products</summary> 
+  <img src='media/wireframes/products_wf.png'>
+</details>
+
+<details> 
+  <summary>Product Sorting</summary> 
+  <img src='media/wireframes/productSort_wf.png'>
+</details>
+
+<details> 
+  <summary>Product Detail</summary> 
+  <img src='media/wireframes/productDetail_wf.png'>
+</details>
+
+<details> 
+  <summary>Add a Product to the Cart</summary> 
+  <img src='media/wireframes/addToCart_wf.png'>
+</details>
+
+<details> 
+  <summary>Shopping Cart</summary> 
+  <img src='media/wireframes/cart_wf.png'>
+</details>
+
+<details> 
+  <summary>Checkout</summary> 
+  <img src='media/wireframes/checkout_wf.png'>
+</details>
+
+<details> 
+  <summary>Shipping Information</summary> 
+  <img src='media/wireframes/shipping_wf.png'>
+</details>
+
+<details> 
+  <summary>Payment Details</summary> 
+  <img src='media/wireframes/paymentDetail_wf.png'>
+</details>
+
+<details> 
+  <summary>Reviews</summary> 
+  <img src='media/wireframes/review_wf.png'>
+</details>
+
+<details> 
+  <summary>Email Login</summary> 
+  <img src='media/wireframes/emailLogin_wf.png'>
+</details>
+
+<details> 
+  <summary>Social Login</summary> 
+  <img src='media/wireframes/socialLogin_wf.png'>
+</details>
+
 <br>
 
 **Database**

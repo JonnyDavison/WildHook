@@ -1,4 +1,38 @@
+/* 
+* {
+    outline: 1px solid #f00 !important;
+} */
+
+
 body {
-    background-color: aqua;
-    color: red;
+    background-color: #0D3D6D;
+    color: #DAA520;
+}
+
+/* Color pallet */
+.yellow {
+    color: #DAA520;
+}
+.bg-yellow {
+    background-color: #DAA520;
+}
+
+.blue {
+    color: #0D3D6D;
+}
+
+.bg-blue {
+    background-color: #0D3D6D;
+}
+
+.brown{
+    color: #8B5A2B;
+}
+.bg-brown {
+    background-color: #8B5A2B;
+}
+
+/* Navbar  */
+.navbar {
+    margin-bottom: 1px #DAA520 solid;
 }

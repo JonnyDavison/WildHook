@@ -30,8 +30,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['8000-jonnydavison-wildhook-oqzgo8b2r2m.ws-eu105.gitpod.io']
-ALLOWED_HOSTS = ['wildhook-72f0fa2bfc47.herokuapp.com']
+ALLOWED_HOSTS = ['8000-jonnydavison-wildhook-oqzgo8b2r2m.ws-eu105.gitpod.io']
+# ALLOWED_HOSTS = ['wildhook-72f0fa2bfc47.herokuapp.com']
 
 
 # Application definition
@@ -67,7 +67,7 @@ ROOT_URLCONF = 'WildHook.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR, os.path.join(BASE_DIR, 'templates', 'allauth')]
+        'DIRS': [TEMPLATES_DIR, os.path.join(BASE_DIR, 'templates', 'allauth')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

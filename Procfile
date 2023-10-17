@@ -1,1 +1,1 @@
-web: guincorn WildHook.wsgi:application
+web: gunicorn Wildook.wsgi

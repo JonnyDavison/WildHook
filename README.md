@@ -26,7 +26,7 @@ WildHook was born from a love for fishing and a deep appreciation for the wild, 
       - [About](#about)
       - [Accounts](#accounts)
       - [Bookings](#bookings)
-      - [Booking Managment](#booking-management)
+      - [Booking Management](#booking-management)
     + [Future Feature Considerations](#future-feature-considerations)
   * [Responsive Layout and Design](#responsive-layout-and-design)
   * [Tools Used](#tools-used)
@@ -508,7 +508,7 @@ User stories where created in GitHub issues, labeled and added to milestones as 
 
 ### Future Feature Considerations
 
-#### Preorder
+#### Pre-order
 
 <hr>
 
@@ -536,7 +536,7 @@ Bootsrtap
 [Favicon.io](https://favicon.io/) - Website favicon
 <br>
 
-[Grammarly](https://app.grammarly.com/) - Spelling/Grammer checks
+[Grammarly](https://app.grammarly.com/) - Spelling/Grammar checks
 <br>
 
 [Font Awesome](https://fontawesome.com/) - Icons/Buttons
@@ -563,7 +563,7 @@ Bootsrtap
 [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) - for debugging the project
 <br>
 
-LightHouse - Proformance testing
+LightHouse - Performance testing
 <br>
 
 ### Python packages

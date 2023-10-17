@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 # ALLOWED_HOSTS = ['8000-jonnydavison-wildhook-oqzgo8b2r2m.ws-eu105.gitpod.io']
-ALLOWED_HOSTS = ['https://wildhook-72f0fa2bfc47.herokuapp.com/']
+ALLOWED_HOSTS = ['wildhook-72f0fa2bfc47.herokuapp.com']
 
 
 

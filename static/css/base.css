@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /* 
 * {
     outline: 1px solid #f00 !important;
@@ -5,8 +6,13 @@
 
 
 body {
-    background-color: #0D3D6D;
-    color: #DAA520;
+    background: url('/media/webimages/KarolinaGrabowska-pexels.webp') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    /* background-color: #DAA520; */
+    /* color: #DAA520; */
+    /* font-family: 'Lato', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* Color pallet */
@@ -25,6 +31,14 @@ body {
     background-color: #0D3D6D;
 }
 
+.green{
+    color: #00563F;
+}
+
+.bg-green {
+    background-color: #00563F;
+}
+
 .brown{
     color: #8B5A2B;
 }
@@ -35,4 +49,22 @@ body {
 /* Navbar  */
 .navbar {
     margin-bottom: 1px #DAA520 solid;
+}
+
+/* Logo */
+
+.logo {
+    text-align: center;
+    justify-content: center;
+    margin-top: 200px;
+    height: 200px;
+    width: 100%;
+    border-radius: 25px;
+    background: linear-gradient(145deg, #c4951d, #e9b122);
+    box-shadow:  37px 37px 73px #b98c1b,
+                -37px -37px 73px #fbbe25;
+}
+
+.logo-txt {
+    font-family: 'Lato', sans-serif;
 }

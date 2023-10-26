@@ -1,17 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-/* 
-* {
+
+/* * {
     outline: 1px solid #f00 !important;
 } */
 
 
 body {
-    background: url('/media/webimages/KarolinaGrabowska-pexels.webp') no-repeat center center fixed;
-    background-size: cover;
-    height: calc(100vh - 164px);
-    /* background-color: #DAA520; */
-    /* color: #DAA520; */
-    /* font-family: 'Lato', sans-serif; */
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -19,6 +13,7 @@ body {
 .yellow {
     color: #DAA520;
 }
+
 .bg-yellow {
     background-color: #DAA520;
 }
@@ -31,7 +26,7 @@ body {
     background-color: #0D3D6D;
 }
 
-.green{
+.green {
     color: #00563F;
 }
 
@@ -39,9 +34,10 @@ body {
     background-color: #00563F;
 }
 
-.brown{
+.brown {
     color: #8B5A2B;
 }
+
 .bg-brown {
     background-color: #8B5A2B;
 }
@@ -51,20 +47,58 @@ body {
     margin-bottom: 1px #DAA520 solid;
 }
 
+/* HOME PAGE  */
 /* Logo */
 
 .logo {
     text-align: center;
     justify-content: center;
-    margin-top: 200px;
-    height: 200px;
+    height: fit-content;
     width: 100%;
-    border-radius: 25px;
-    background: linear-gradient(145deg, #c4951d, #e9b122);
-    box-shadow:  37px 37px 73px #b98c1b,
-                -37px -37px 73px #fbbe25;
+    background: #00563F;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+
+.logo-container {
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 12rem;
 }
 
 .logo-txt {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    color: #DAA520;
+    font-size: 9.5rem;
+    margin: 0;
+}
+
+.cta-banner {
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.cta-banner > h4 {
+    margin: 0;
+}
+
+.shop-now-button {
+    border: 1px solid black;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.promo-section {
+    background: url('/media/webimages/KarolinaGrabowska-pexels.webp') no-repeat center center fixed;
+    background-size: cover;
+    height: 75rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }

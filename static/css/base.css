@@ -105,30 +105,65 @@ body {
     color: #fff;
 }
 
+/* Promotion Section */
+
+.promotions {
+    background: url('/media/webimages/lum3n-pexels.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.promo-title {
+    justify-content: center !important;
+    align-items: center !important;
+    margin-left: auto;
+    margin-right: auto;
+}
 .promo-section {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('/media/webimages/KarolinaGrabowska-pexels.webp') no-repeat center center fixed;
-    background-size: cover;
     min-height: 100vh;
     width: 100%;
     margin: 0;
     padding: 0;
 }
 
+.overlay {
+    margin: auto;
+    height: 15rem;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(226, 226, 226, 0.35);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(15px);
+    
+}
+
+.card {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+/* Animation */
 .box {
     position: relative;
     width: 200px;
     height: 300px;
     transform-style: preserve-3d;
-    animation: animate 20s linear infinite;
+    animation: animate 40s linear infinite;
 }
 
 @keyframes animate {
     0% {
         transform: perspective(1000px) rotateY(0deg);
     }
+
     100% {
         transform: perspective(1000px) rotateY(360deg);
     }
@@ -153,53 +188,50 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 5%;
 }
 
-.img-gallery {
-    /* margin-top: 200px;
-    margin-bottom: 200px; */
 
-}
 /* MEDIA QUERIES */
 
 /* // Small devices (landscape phones, 576px and down) */
-@media (max-width: 576px) { 
+@media (max-width: 576px) {
 
     .logo-txt {
         font-size: 4.5rem;
     }
- }
+}
 
- /* // Small devices (landscape phones, 576px and up) */
- @media (min-width: 576px) { 
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
 
     .logo-txt {
         font-size: 6.5rem;
     }
- }
+}
 
 /* // Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
-    
+@media (min-width: 768px) {
+
     .logo-txt {
         font-size: 7.5rem;
     }
 
- }
+}
 
 /* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
+@media (min-width: 992px) {
     .logo-txt {
         font-size: 9.5rem;
     }
- }
+}
 
 /* // X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { 
+@media (min-width: 1200px) {
 
- }
+}
 
 /* // XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
 
- }
+}

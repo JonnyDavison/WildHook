@@ -42,6 +42,10 @@ body {
     background-color: #8B5A2B;
 }
 
+.white {
+    color: white;
+}
+
 /* Navbar  */
 .navbar {
     margin-bottom: 1px #DAA520 solid;
@@ -55,7 +59,7 @@ body {
     justify-content: center;
     height: fit-content;
     width: 100%;
-    background: #00563F;
+    background: #0D3D6D;
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
 }
@@ -69,7 +73,6 @@ body {
 
 .logo-txt {
     font-family: 'Montserrat', sans-serif;
-    color: #DAA520;
     margin: 0;
 }
 
@@ -82,14 +85,23 @@ body {
     margin-bottom: 0;
 }
 
+.cta-banner:hover {
+    color: #fff;
+}
+
 .cta-banner > h4 {
     margin: 0;
 }
 
 .shop-now-button {
-    border: 1px solid black;
+    border: 1px solid #0D3D6D;
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
+}
+
+.shop-now-button:hover {
+    border: 1px solid #fff;
+    color: #fff;
 }
 
 .promo-section {

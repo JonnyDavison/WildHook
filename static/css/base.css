@@ -70,12 +70,45 @@ body {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .logo-txt {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.5);
+    background-image: url(https://image.ibb.co/ciSeac/image.png);
+    background-repeat: repeat-x;
+    -webkit-background-clip: text;
+    animation: animate-logo 15s linear infinite;
 }
+
+@keyframes animate-logo {
+    0% {
+        background-position: left 0px top 80px;
+    }
+
+    40% {
+        background-position: left 800px top -50px;
+    }
+
+    80% {
+        background-position: left 1800px top -50px;
+    }
+
+    100% {
+        background-position: left 2400px top 80px;
+    }
+}
+
 
 .cta-banner {
     justify-content: center;
@@ -90,7 +123,7 @@ body {
     color: #fff;
 }
 
-.cta-banner > h4 {
+.cta-banner>h4 {
     margin: 0;
 }
 
@@ -120,6 +153,7 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
 .promo-section {
     display: flex;
     justify-content: center;
@@ -140,7 +174,7 @@ body {
     background: rgba(226, 226, 226, 0.35);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(15px);
-    
+
 }
 
 .card {
@@ -150,16 +184,17 @@ body {
     margin-top: 3rem;
     margin-bottom: 3rem;
 }
-/* Animation */
+
+/* Promotion Animation */
 .box {
     position: relative;
     width: 200px;
     height: 300px;
     transform-style: preserve-3d;
-    animation: animate 40s linear infinite;
+    animation: animate-img 40s linear infinite;
 }
 
-@keyframes animate {
+@keyframes animate-img {
     0% {
         transform: perspective(1000px) rotateY(0deg);
     }
@@ -190,6 +225,12 @@ body {
     object-fit: cover;
     border-radius: 5%;
 }
+
+
+/* FOOTER  */
+
+
+
 
 
 /* MEDIA QUERIES */
@@ -227,11 +268,7 @@ body {
 }
 
 /* // X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-
-}
+@media (min-width: 1200px) {}
 
 /* // XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-
-}
+@media (min-width: 1400px) {}

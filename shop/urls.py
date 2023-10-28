@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 from .views import item_list
 
 app_name = 'shop'
+
 urlpatterns = [
     path('', item_list, name='item-list')
 ]

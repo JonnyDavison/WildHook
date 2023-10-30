@@ -143,7 +143,7 @@ body {
     color: #fff;
 }
 
-/* Promotion Section */
+/* Promotion Section Home Page */
 
 .promotions {
     background: url('/media/webimages/lum3n-pexels.jpeg') no-repeat center center fixed;
@@ -281,6 +281,18 @@ footer .form-control {
 }
 
 
+
+/* PRODUCTS PAGE  */
+
+.page-banner {
+    text-align: center;
+    justify-content: center;
+    height: fit-content;
+    width: 100%;
+    background: #0D3D6D;
+    font-size: 4rem;
+}
+
 /* MEDIA QUERIES */
 
 /* // Small devices (landscape phones, 576px and down) */
@@ -303,6 +315,10 @@ footer .form-control {
     .footer {
         height: 500px;
     }
+
+    .page-banner {
+        font-size: 2rem;
+    }
 }
 
 /* // Small devices (landscape phones, 576px and up) */
@@ -310,6 +326,10 @@ footer .form-control {
 
     .logo-txt {
         font-size: 6.5rem;
+    }
+
+    .page-banner {
+        font-size: 2rem;
     }
    
 }
@@ -320,6 +340,9 @@ footer .form-control {
     .logo-txt {
         font-size: 7.5rem;
     }
+    .page-banner {
+        font-size: 3rem;
+    }
 
 }
 
@@ -327,6 +350,10 @@ footer .form-control {
 @media (min-width: 992px) {
     .logo-txt {
         font-size: 9.5rem;
+    }
+
+    .page-banner {
+        font-size: 4rem;
     }
 }
 

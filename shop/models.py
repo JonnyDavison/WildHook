@@ -14,12 +14,20 @@ LABEL_CHOICES = (
     ('D', 'danger')
 )
 
+TAG_CHOICES = (
+    ('N', 'NEW'),
+    ('L', 'LOW STOCK'),
+    ('P', 'ON SALE'),
+    ('S', 'SOLD OUT')
+)
+
 
 class Item(models.Model):
     title = models.CharField(max_length=100)
     price = models.FloatField()
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=10)
     label = models.CharField(choices=LABEL_CHOICES, max_length=1)
+    tag = models.CharField(choices=TAG_CHOICES, max_length=1)
     description = models.TextField(null=True, blank=True)
     slug = models.SlugField(max_length=254, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)

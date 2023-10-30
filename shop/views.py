@@ -3,7 +3,9 @@ from .models import Item
 
 
 def item_list(request):
+
+    items = Item.objects.all()
     context = {
-        'items': Item.objects.all()
+        'items': items
     }
-    return render(request, 'item_list.html', context)
+    return render(request, 'shop/item_list.html', context)

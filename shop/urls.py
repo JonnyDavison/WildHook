@@ -2,10 +2,9 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import item_list
+from . import views
 
-app_name = 'shop'
 
 urlpatterns = [
-    path('', item_list, name='item-list')
+    path('item_list', views.item_list, name='item_list')
 ]

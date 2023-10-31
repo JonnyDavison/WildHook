@@ -15,7 +15,11 @@
   <div class="container dark-grey-text mt-5">
     <div class="row wow fadeIn">
       <div class="col-md-6 mb-4">
+        {% if item.image %}
         <img src="/media/webimages/{{ object.image }}" class="img-fluid" alt="{{ object.name }}">
+        {% else %}
+        <img src="/media/webimages/default-img.webp"  class="img-fluid" alt="No image available for Product">
+        {% endif %}
       </div>
       <div class="col-md-6 mb-4">
         <div class="p-4">

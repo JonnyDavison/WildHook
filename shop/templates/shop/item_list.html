@@ -19,8 +19,12 @@
         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
 
             <div class="card">
-                <a href="{{ item.get_product_url }}">
+                <a href="{{ item.get_product_url }}" class="ratio ratio-4x3">
+                    {% if item.image %}
                     <img src="/media/webimages/{{ item.image }}" class="card-img-top" alt="{{ item.name }}">
+                    {% else %}
+                    <img src="/media/webimages/default-img.webp"  class="card-img-top" alt="No image available for Product">
+                    {% endif %}
                 </a>
                 <div class="card-body">
                     <a href="{{ item.get_product_url }}">

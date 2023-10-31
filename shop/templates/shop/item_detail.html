@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="w-100 ">
+  <div class="row">
+      <div class="col-12">
+          <div class="">
+              <h1 class="page-banner white">Product Detail</h1>
+          </div>
+      </div>
+  </div>
+</div>
+
+<main class="mt-5 pt-4">
+  <div class="container dark-grey-text mt-5">
+    <div class="row wow fadeIn">
+      <div class="col-md-6 mb-4">
+        <img src="/media/webimages/{{ object.image }}" class="img-fluid" alt="{{ object.name }}">
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="p-4">
+          <div class="mb-3">
+            <a href="">
+              <h5 class="card-title">{{ object.title }}</h5>
+              <span class="badge purple mr-1">{{ object.get_category_display }}</span>
+            </a>
+          </div>
+          <p class="lead">
+            {% if object.offer_price %}
+            <span class="mr-1">
+              <del>${{ object.price }}</del>
+            </span>
+            <span>${{ object.offer_price }}</span>
+            {% else %}
+            <span>${{ object.price }}</span>
+            <span class="badge badge-pill text-bg-{{ item.get_label_display }}">{{ item.get_tag_display }}</span>
+
+            {% endif %}
+          </p>
+          <p class="lead font-weight-bold">Description</p>
+          <p>{{ object.description }}</p>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>
+</main>
+
+{% endblock content %}

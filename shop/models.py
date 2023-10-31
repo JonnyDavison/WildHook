@@ -26,6 +26,7 @@ TAG_CHOICES = (
 class Item(models.Model):
     title = models.CharField(max_length=100)
     price = models.FloatField()
+    offer_price = models.FloatField(null=True, blank=True)
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=10)
     label = models.CharField(choices=LABEL_CHOICES, max_length=1)
     tag = models.CharField(choices=TAG_CHOICES, max_length=1)

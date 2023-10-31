@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.shortcuts import reverse
 
 
 CATEGORY_CHOICES = (
@@ -34,6 +35,11 @@ class Item(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_product_url(self):
+        return reverse("shop:product", kwargs={
+            'slug': self.slug
+        })
 
 
 class OrderItem(models.Model):

@@ -3,8 +3,11 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
+from .views import (ProductView)
 
+app_name = 'shop'
 
 urlpatterns = [
-    path('item_list', views.item_list, name='item_list')
+    path('item_list', views.item_list, name='item_list'),
+    path('product/<slug>/', ProductView.as_view(), name='product')
 ]

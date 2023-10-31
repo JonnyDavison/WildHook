@@ -33,9 +33,8 @@
             <span>${{ object.offer_price }}</span>
             {% else %}
             <span>${{ object.price }}</span>
-            <span class="badge badge-pill text-bg-{{ item.get_label_display }}">{{ item.get_tag_display }}</span>
-
             {% endif %}
+            <span class="badge badge-pill text-bg-{{ item.get_label_display }}">{{ object.get_tag_display }}</span>
           </p>
           <p class="lead font-weight-bold">Description</p>
           <p>{{ object.description }}</p>

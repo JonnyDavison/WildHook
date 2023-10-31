@@ -28,11 +28,11 @@
           <p class="lead">
             {% if object.offer_price %}
             <span class="mr-1">
-              <del>${{ object.price }}</del>
+              <del>£{{ object.price }}</del>
             </span>
-            <span>${{ object.offer_price }}</span>
+            <span>£{{ object.offer_price }}</span>
             {% else %}
-            <span>${{ object.price }}</span>
+            <span>£{{ object.price }}</span>
             {% endif %}
             <span class="badge badge-pill text-bg-{{ item.get_label_display }}">{{ object.get_tag_display }}</span>
           </p>

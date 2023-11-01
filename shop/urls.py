@@ -14,5 +14,4 @@ urlpatterns = [
     path('item_list', views.item_list, name='item_list'),
     path('product/<slug>/', ProductView.as_view(), name='product'),
     path('add_to_cart/<slug>/', add_to_cart, name='add_to_cart')
-
 ]

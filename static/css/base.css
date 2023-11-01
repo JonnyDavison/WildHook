@@ -293,6 +293,21 @@ footer .form-control {
     font-size: 4rem;
 }
 
+.add-btn {
+    border: 1px solid #0D3D6D;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    background-color: #DAA520;
+}
+
+
+.add-btn:hover {
+    border: 1px solid #0D3D6D;
+    color: #DAA520;
+    background-color: #0D3D6D;
+
+}
+
 /* MEDIA QUERIES */
 
 /* // Small devices (landscape phones, 576px and down) */

@@ -22,7 +22,11 @@ def item_list(request):
 
 def add_to_cart(request, slug):
     item = get_object_or_404(Item, slug=slug)
-    order_item = OrderItem.objects.get_ot_create(item=item)
+    order_item, created = OrderItem.objects.get_or_create(
+        item=item,
+        user=request.user,
+        ordered=False
+    )
     order_query = Order.objects.filter(user=request.user, ordered=False)
     if order_query.exists():
         order = order_query[0]

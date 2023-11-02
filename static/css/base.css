@@ -291,6 +291,7 @@ footer .form-control {
     width: 100%;
     background: #0D3D6D;
     font-size: 4rem;
+    margin: 0;
 }
 
 .add-btn {
@@ -306,6 +307,18 @@ footer .form-control {
     color: #DAA520;
     background-color: #0D3D6D;
 
+}
+
+/* MESSAGES */
+
+.messages-item-div {
+    justify-content: center;
+    align-content: center;
+}
+.messages-item-detail {
+    margin: auto;
+    margin-bottom: 0;
+    width: 75%;
 }
 
 /* MEDIA QUERIES */

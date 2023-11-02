@@ -6,6 +6,7 @@ from . import views
 from .views import (
     ProductView,
     add_to_cart,
+    remove_from_cart,
     )
 
 app_name = 'shop'
@@ -13,5 +14,6 @@ app_name = 'shop'
 urlpatterns = [
     path('item_list', views.item_list, name='item_list'),
     path('product/<slug>/', ProductView.as_view(), name='product'),
-    path('add_to_cart/<slug>/', add_to_cart, name='add_to_cart')
+    path('add_to_cart/<slug>/', add_to_cart, name='add_to_cart'),
+    path('remove_from_cart/<slug>/', remove_from_cart, name='remove_from_cart')
 ]

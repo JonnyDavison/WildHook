@@ -241,16 +241,6 @@ body {
     height: 300px;
 }
 
-/* Taller footer on small screens */
-/* @media (max-width: 567em) {
-      body {
-        margin-bottom: 700px;
-      }
-      .footer {
-        height: 700px;
-      }
-  } */
-
 /* Sticky footer style and color
   -------------------------------------------------- */
 footer {

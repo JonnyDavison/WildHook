@@ -34,13 +34,20 @@ def add_to_cart(request, slug):
         if order.items.filter(item__slug=item.slug).exists():
             order_item.quantity += 1
             order_item.save()
+            messages.info(request, "The item quantity was updated.")
+            return redirect('shop:product', slug=slug)
+
         else:
             order.items.add(order_item)
+            messages.info(request, "This item was added to your cart.")
+            return redirect('shop:product', slug=slug)
+
     else:
         ordered_date = timezone.now()
         order = Order.objects.create(user=request.user,
                                      ordered_date=ordered_date)
         order.items.add(order_item)
+        messages.info(request, "The item quantity was updated.")
     return redirect('shop:product', slug=slug)
 
 

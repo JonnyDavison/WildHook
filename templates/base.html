@@ -42,15 +42,38 @@
                   <li><a class="dropdown-item blue" href="#">TBC</a></li>
                 </ul>
               </li>
-              
-              <li class="nav-item">
-                <a class="nav-link blue" href="#"><i class="bi bi-cart3"></i>Basket</a>
-              </li>
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" id="search" type="search" placeholder="Search" aria-label="Search">
               <button class="btn blue" type="submit">Search</button>
             </form>
+             <ul class="navbar-nav nav-flex-icons">
+          {% if request.user.is_authenticated %}
+          <li class="nav-item">
+            <a href="" class="nav-link blue waves-effect">
+              <span class="badge red z-depth-1 mr-1 blue">  </span>
+              <i class="bi bi-cart3"></i>
+              <span class="clearfix d-none d-sm-inline-block"> Basket</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link blue waves-effect" href="{% url 'account_logout' %}">
+              <span class="clearfix d-none d-sm-inline-block"> Logout </span>
+            </a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="{% url 'account_login' %}">
+              <span class="clearfix d-none d-sm-inline-block"> Login </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="{% url 'account_signup' %}">
+              <span class="clearfix d-none d-sm-inline-block"> Signup </span>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
           </div>
         </div>
       </nav>

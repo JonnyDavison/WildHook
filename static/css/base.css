@@ -321,6 +321,21 @@ footer .form-control {
     width: 75%;
 }
 
+/* ACCOUNT LOGIN/LOGOUT/SIGN-UP */
+
+.account-page {
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+}
+
+.signup {
+    text-align: left;
+    width: fit-content;
+    margin: auto;
+}
 /* MEDIA QUERIES */
 
 /* // Small devices (landscape phones, 576px and down) */

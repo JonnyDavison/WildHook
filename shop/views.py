@@ -1,5 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import ListView, DetailView
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import ObjectDoesNotExist
+from django.views.generic import ListView, DetailView, View
 from .models import Item, OrderItem, Order
 from django.utils import timezone
 from django.contrib import messages
@@ -8,6 +11,17 @@ from django.contrib import messages
 class ProductView(DetailView):
     model = Item
     shop_template = 'shop/item_detail.html'
+
+
+class OrderSummary(LoginRequiredMixin, View):
+    def get(self, args, **kwargs):
+        try:
+            order = Order.objects.get(user=self.request.user, ordered=False)
+            return render(self.request,'shop/order_summary.html')
+        
+        except ObjectDoesNotExist:
+            messages.error(self.request, "No active order found")
+            return redirect('/')
 
 
 def item_list(request):
@@ -20,7 +34,7 @@ def item_list(request):
     }
     return render(request, shop, context)
 
-
+@login_required
 def add_to_cart(request, slug):
     item = get_object_or_404(Item, slug=slug)
     order_item, created = OrderItem.objects.get_or_create(
@@ -50,7 +64,7 @@ def add_to_cart(request, slug):
         messages.info(request, "The item quantity was updated.")
     return redirect('shop:product', slug=slug)
 
-
+@login_required
 def remove_from_cart(request, slug):
     item = get_object_or_404(Item, slug=slug)
     order_query = Order.objects.filter(

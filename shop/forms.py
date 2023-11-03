@@ -1,7 +1,7 @@
 from django import forms
 from django_countries.fields import CountryField
 
-class CheckoutForm(forms.form):
+class CheckoutForm(forms.Form):
     street_address = forms.CharField()
     street_address_2 = forms.CharField(required=False)
     country = CountryField(blank_label='(select country)')

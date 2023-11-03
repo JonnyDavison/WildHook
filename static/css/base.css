@@ -315,6 +315,10 @@ footer .form-control {
     background-color: #DAA520;
     color: #0D3D6D;
 }
+
+.bin {
+    color: red;
+}
 /* MESSAGES */
 
 .messages-item-div {

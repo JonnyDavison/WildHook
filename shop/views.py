@@ -17,7 +17,10 @@ class OrderSummary(LoginRequiredMixin, View):
     def get(self, args, **kwargs):
         try:
             order = Order.objects.get(user=self.request.user, ordered=False)
-            return render(self.request,'shop/order_summary.html')
+            context = {
+                'object': order,
+            }
+            return render(self.request,'shop/order_summary.html', context)
         
         except ObjectDoesNotExist:
             messages.error(self.request, "No active order found")

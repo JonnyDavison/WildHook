@@ -3,8 +3,8 @@
 
 
 {% block content %}
-<div class="w-100 ">
-    <div class="row">
+<div class="">
+    <div class="row g-0">
         <div class="col-12">
             <div class="">
                 <h1 class="page-banner white">Order Summary</h1>
@@ -13,9 +13,9 @@
     </div>
 </div>
 
-<div class="w-100">
-    <div class="row w-100">
-        <div class="col-10 offset-1 col-sm-8 offset-sm-2">
+<div class="">
+    <div class="row">
+        <div class="col-10 col-sm-8 offset-sm-2 blue">
             <table class="table">
                 <thead>
                     <tr>
@@ -33,21 +33,19 @@
                         <td>{{ order_item.item.title }}</td>
                         <td>{{ order_item.item.price }}</td>
                         <td>
-                            <a href="{% url 'shop:remove-single-item-from-cart' order_item.item.slug %}"><i
-                                    class="fas fa-minus mr-2"></i></a>
+                            <a href=""><i class="fas fa-minus mr-2"></i></a>
                             {{ order_item.quantity }}
-                            <a href="{% url 'shop:add-to-cart' order_item.item.slug %}"><i
-                                    class="fas fa-plus ml-2"></i></a>
+                            <a href=""><i class="fas fa-plus ml-2"></i></a>
                         </td>
                         <td>
-                            {% if order_item.item.discount_price %}
-                            ${{ order_item.get_total_discount_item_price }}
-                            <span class="badge badge-primary">Saving ${{ order_item.get_amount_saved }}</span>
+                            {% if order_item.item.offer_price  %}
+                            £{{ order_item.get_total_discount_item_price }}
+                            <span class="badge blue">Saving £{{ order_item.get_amount_saved }}!</span>
                             {% else %}
-                            ${{ order_item.get_total_item_price }}
+                            £{{ order_item.get_total_item_price }}
                             {% endif %}
-                            <a style='color: red;' href="{% url 'shop:remove-from-cart' order_item.item.slug %}">
-                                <i class="fas fa-trash float-right"></i>
+                            <a style='color: red;' href="">
+                                <i class="fas fa-trash float-end"></i>
                             </a>
                         </td>
                     </tr>
@@ -64,18 +62,19 @@
                     {% if object.coupon %}
                     <tr>
                         <td colspan="4"><b>Coupon</b></td>
-                        <td><b>-${{ object.coupon.amount }}</b></td>
+                        <td><b>-£{{ object.coupon.amount }}</b></td>
                     </tr>
                     {% endif %}
                     {% if object.get_total %}
                     <tr>
                         <td colspan="4"><b>Order Total</b></td>
-                        <td><b>${{ object.get_total }}</b></td>
+                        <td><b>£{{ object.get_total }}</b></td>
                     </tr>
                     <tr>
                         <td colspan="5">
-                            <a class='btn btn-warning float-right ml-2' href='/checkout/'>Proceed to checkout</a>
-                            <a class='btn btn-primary float-right' href='/'>Continue shopping</a>
+                            <a class='btn add-btn float-end blue' href='/checkout/'>Proceed to checkout</a>
+                            <a class='btn bg-blue yellow float-end continue-btn'
+                                href="{% url 'shop:item_list' %}">Continue shopping</a>
                         </td>
                     </tr>
                     {% endif %}

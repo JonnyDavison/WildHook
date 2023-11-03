@@ -20,14 +20,14 @@
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <a class="navbar-brand blue" href="#">WildHook</a>
+          <a class="navbar-brand blue" href="{% url 'home' %}">WildHook</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link blue" aria-current="page" href="#">Home</a>
+                <a class="nav-link blue" aria-current="page" href="{% url 'home' %}">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link blue" href="#">Blog</a>
@@ -36,8 +36,8 @@
                 <a class="nav-link dropdown-toggle blue" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Shop
                 </a>
-                <ul class="dropdown-menu bg-blue">
-                  <li><a class="dropdown-item blue" href="#">Shop</a></li>
+                <ul class="dropdown-menu bg-yellow">
+                  <li><a class="dropdown-item blue" href="{% url 'shop:item_list' %}">Shop</a></li>
                   <li><a class="dropdown-item blue" href="#">Lures</a></li>
                   <li><a class="dropdown-item blue" href="#">Reels</a></li>
                   <li><a class="dropdown-item blue" href="#">TBC</a></li>
@@ -51,7 +51,7 @@
              <ul class="navbar-nav nav-flex-icons">
           {% if request.user.is_authenticated %}
           <li class="nav-item">
-            <a href="" class="nav-link blue waves-effect">
+            <a href="{% url 'shop:order_summary' %}" class="nav-link blue waves-effect">
               <span class="badge red z-depth-1 mr-1 bg-yellow blue"> {{ request.user|basket_item_count}} </span>
               <i class="bi bi-cart3"></i>
               <span class="clearfix d-none d-sm-inline-block"> Basket</span>
@@ -78,7 +78,7 @@
           </div>
         </div>
       </nav>
-      <div class="w-100 ">
+      <div class="">
         <div class="row">
             <div class="col-12">
                 <div class="logo logo-container">
@@ -91,7 +91,7 @@
         <div class="row">
             <div class="col-12 d-block blue cta-banner">
                 <h4 class="text-uppercase">
-                    New Lines available <a href="" class="btn shop-now-button rounded-0 text-uppercase blue display-4">Shop
+                    New Lines available <a href="{% url 'shop:item_list' %}" class="btn shop-now-button rounded-0 text-uppercase blue display-4">Shop
                         Now</a>
                 </h4>
             </div>
@@ -108,18 +108,18 @@
                   <div class="row">
                       <div class="col-6">
                           <ul class="list-unstyled">
-                              <li><a href="">Product</a></li>
-                              <li><a href="">Benefits</a></li>
-                              <li><a href="">Partners</a></li>
-                              <li><a href="">Team</a></li>
+                              <li><a href="{% url 'shop:item_list' %}">Products</a></li>
+                              <li><a href="">xx</a></li>
+                              <li><a href="">xx</a></li>
+                              <li><a href="">xx</a></li>
                           </ul>
                       </div>
                       <div class="col-6">
                           <ul class="list-unstyled">
-                              <li><a href="">Documentation</a></li>
-                              <li><a href="">Support</a></li>
-                              <li><a href="">Legal Terms</a></li>
-                              <li><a href="">About</a></li>
+                              <li><a href="">xx</a></li>
+                              <li><a href="">xx</a></li>
+                              <li><a href="">xx</a></li>
+                              <li><a href="">xx</a></li>
                           </ul>
                       </div>
                   </div>

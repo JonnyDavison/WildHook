@@ -25,8 +25,8 @@ TAG_CHOICES = (
 
 class Item(models.Model):
     title = models.CharField(max_length=100)
-    price = models.FloatField()
-    offer_price = models.FloatField(null=True, blank=True)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    offer_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=10)
     label = models.CharField(choices=LABEL_CHOICES, max_length=1)
     tag = models.CharField(choices=TAG_CHOICES, max_length=1)
@@ -71,7 +71,7 @@ class OrderItem(models.Model):
         return self.quantity * self.item.offer_price
     
     def get_amount_saved(self):
-        return round(self.get_total_item_price() - self.get_total_discount_item_price(), 2)
+        return self.get_total_item_price() - self.get_total_discount_item_price()
 
     def get_final_price(self):
         if self.item.offer_price:

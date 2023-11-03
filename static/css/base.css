@@ -9,6 +9,10 @@ html {
     min-height: 100%;
 }
 
+.row {
+    --bs-gutter-x: 0 !important;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
@@ -272,7 +276,7 @@ footer .form-control {
 
 
 
-/* PRODUCTS PAGE  */
+/* BANNERS  */
 
 .page-banner {
     text-align: center;
@@ -283,6 +287,8 @@ footer .form-control {
     font-size: 4rem;
     margin: 0;
 }
+
+/* BUTTONS  */
 
 .add-btn {
     border: 1px solid #0D3D6D;
@@ -298,7 +304,17 @@ footer .form-control {
     background-color: #0D3D6D;
 
 }
+.continue-btn {
+    border: 1px solid #0D3D6D;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
 
+.continue-btn:hover {
+    border: 1px solid #0D3D6D;
+    background-color: #DAA520;
+    color: #0D3D6D;
+}
 /* MESSAGES */
 
 .messages-item-div {

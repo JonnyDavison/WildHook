@@ -125,14 +125,22 @@ def remove_single_item_from_cart(request, slug):
 
 class CheckoutView(View):
     def get(self, *args, **kwargs):
-        try:
             order = Order.objects.get(user=self.request.user, ordered=False)
             form = CheckoutForm()
             context = {
                 'form': form,
                 'order': order,
+                'DISPLAY_COUPON_FORM': True
             }
             return render(self.request, "shop/checkout.html", context)
-        except ObjectDoesNotExist:
-            messages.info(self.request, "You do not have an active order")
-            return redirect("shop:checkout")
+            
+    def post(self, *args, **kwargs):
+        form = CheckoutForm(self.request.POST or None)
+        print(self.request.POST)
+        if form.is_valid():
+            print(form.cleaned_data)
+            print("FORM VALID")
+            return redirect('shop:checkout')
+        messages.warning(self.request, "FAILED CHECKOUT")
+        return redirect('shop:checkout')
+          

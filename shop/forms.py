@@ -27,4 +27,4 @@ class CheckoutForm(forms.Form):
     payment_option = forms.ChoiceField(
         widget=forms.RadioSelect, choices=PAYMENT_CHOICES)
 
-    same_billing_address = forms.BooleanField(required=False)
+    same_shipping_address = forms.BooleanField(required=False)

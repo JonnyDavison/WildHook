@@ -6,7 +6,7 @@ from django.views.generic import ListView, DetailView, View
 from .models import Item, OrderItem, Order
 from django.utils import timezone
 from django.contrib import messages
-
+from .forms import CheckoutForm
 
 class ProductView(DetailView):
     model = Item
@@ -121,3 +121,18 @@ def remove_single_item_from_cart(request, slug):
     else:
         messages.info(request, "You do not have an active order")
         return redirect('shop:product', slug=slug)
+
+
+class CheckoutView(View):
+    def get(self, *args, **kwargs):
+        try:
+            order = Order.objects.get(user=self.request.user, ordered=False)
+            form = CheckoutForm()
+            context = {
+                'form': form,
+                'order': order,
+            }
+            return render(self.request, "shop/checkout.html", context)
+        except ObjectDoesNotExist:
+            messages.info(self.request, "You do not have an active order")
+            return redirect("shop:checkout")

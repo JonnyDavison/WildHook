@@ -104,7 +104,7 @@ class BillingAddress(models.Model):
                              on_delete=models.CASCADE)
     street_address = models.CharField(max_length=100)
     street_address_2 = models.CharField(max_length=100)
-    country = CountryField(multiple=True)
+    country = CountryField(multiple=False)
     postcode = models.CharField(max_length=100)
     
 

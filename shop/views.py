@@ -144,7 +144,7 @@ class CheckoutView(View):
                 street_address_2 = form.cleaned_data.get('street_address_2')
                 country = form.cleaned_data.get('country')
                 postcode = form.cleaned_data.get('postcode')
-                same_billing_address = form.cleaned_data.get('same_billing_address')
+                same_shipping_address = form.cleaned_data.get('same_shipping_address')
                 save_info = form.cleaned_data.get('save_info')
                 payment_option = form.cleaned_data.get('payment_option')
                 billing_address = BillingAddress(
@@ -157,6 +157,7 @@ class CheckoutView(View):
                 billing_address.save()
                 order.billing_address = billing_address
                 order.save()
+            
                 return redirect('shop:checkout')
             messages.warning(self.request, "FAILED CHECKOUT")
             return redirect('shop:checkout')
@@ -165,3 +166,7 @@ class CheckoutView(View):
             messages.error(self.request, "You do not have an active order")    
             return redirect('shop:order_summary')
         
+
+class PaymentView():
+    def get(self, *args, **kwargs):
+        return render(self.request, "shop/payment.html")

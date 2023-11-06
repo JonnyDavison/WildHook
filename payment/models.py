@@ -4,7 +4,11 @@ import uuid
 from django.db.models import Sum
 from django.conf import settings
 
+
 class ShippingInfo(models.Model):
+    class Meta:
+        verbose_name_plural = 'Shipping Info'
+
     order_id = models.CharField(max_length=32, null=False, editable=False)
     date = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=50, null=False, blank=False)
@@ -19,7 +23,6 @@ class ShippingInfo(models.Model):
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
 
-    
     def _generate_order_id(self):
         return uuid.uuid4().hex.upper()
     
@@ -35,6 +38,7 @@ class ShippingInfo(models.Model):
 
     def __str__(self):
         return self.order_id
+
 
 class OrderLineItem(models.Model):
     order = models.ForeignKey(ShippingInfo, null=False, blank=False, on_delete=models.CASCADE, related_name='ShippingInfo')

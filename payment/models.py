@@ -3,6 +3,7 @@ from shop.models import Item
 import uuid
 from django.db.models import Sum
 from django.conf import settings
+from shop.models import Order, OrderItem
 
 
 class ShippingInfo(models.Model):
@@ -42,6 +43,7 @@ class ShippingInfo(models.Model):
 
 class OrderLineItem(models.Model):
     order = models.ForeignKey(ShippingInfo, null=False, blank=False, on_delete=models.CASCADE, related_name='ShippingInfo')
+    order_item = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='order_item')
     product = models.ForeignKey(Item, null=False, blank=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)

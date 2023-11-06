@@ -7,7 +7,6 @@ def checkout(request):
     
     order = Order.objects.all()
     total = 0
-    print('order in payments/views.py', order)
     if not order:
         messages.error(request, "There's nothing in your bag at the moment")
     order_item = OrderItem.objects.filter(
@@ -21,7 +20,6 @@ def checkout(request):
     if total > 0:
         grand_total = total + fee
     order_form = OrderForm()
-    print('orderitems in payments/views.py', order_item)
     template = 'payment/payment.html'
     context = {
         'fee': fee,

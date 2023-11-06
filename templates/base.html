@@ -2,53 +2,64 @@
 {% load basket_tag %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WildHook | Irish Fishing Supplies</title>
 
-    <!-- core css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="/media/favicon/favicon.ico">
-    <!-- core js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/75b57bf907.js" crossorigin="anonymous"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WildHook | Irish Fishing Supplies</title>
+
+  <!-- core css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="/media/favicon/favicon.ico">
+  <!-- core js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+  </script>
+  <script src="https://kit.fontawesome.com/75b57bf907.js" crossorigin="anonymous"></script>
+  <!-- Stripe js -->
+  <script src="https://js.stripe.com/v3/"></script>
+  
+
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-          <a class="navbar-brand blue" href="{% url 'home' %}">WildHook</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link blue" aria-current="page" href="{% url 'home' %}">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link blue" href="#">Blog</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle blue" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Shop
-                </a>
-                <ul class="dropdown-menu bg-yellow">
-                  <li><a class="dropdown-item blue" href="{% url 'shop:item_list' %}">Shop</a></li>
-                  <li><a class="dropdown-item blue" href="#">Lures</a></li>
-                  <li><a class="dropdown-item blue" href="#">Reels</a></li>
-                  <li><a class="dropdown-item blue" href="#">TBC</a></li>
-                </ul>
-              </li>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand blue" href="{% url 'home' %}">WildHook</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link blue" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link blue" href="#">Blog</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle blue" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Shop
+            </a>
+            <ul class="dropdown-menu bg-yellow">
+              <li><a class="dropdown-item blue" href="{% url 'shop:item_list' %}">Shop</a></li>
+              <li><a class="dropdown-item blue" href="#">Lures</a></li>
+              <li><a class="dropdown-item blue" href="#">Reels</a></li>
+              <li><a class="dropdown-item blue" href="#">TBC</a></li>
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" id="search" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn blue" type="submit">Search</button>
-            </form>
-             <ul class="navbar-nav nav-flex-icons">
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" id="search" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn blue" type="submit">Search</button>
+        </form>
+        <ul class="navbar-nav nav-flex-icons">
           {% if request.user.is_authenticated %}
           <li class="nav-item">
             <a href="{% url 'shop:order_summary' %}" class="nav-link blue waves-effect">
@@ -75,81 +86,86 @@
           </li>
           {% endif %}
         </ul>
-          </div>
-        </div>
-      </nav>
-      <div class="">
-        <div class="row">
-            <div class="col-12">
-                <div class="logo logo-container">
-                    <h1 class="logo-txt white">WildHook</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="bg-yellow">
-        <div class="row">
-            <div class="col-12 d-block blue cta-banner">
-                <h4 class="text-uppercase">
-                    New Lines available <a href="{% url 'shop:item_list' %}" class="btn shop-now-button rounded-0 text-uppercase blue display-4">Shop
-                        Now</a>
-                </h4>
-            </div>
-        </div>
-    </div>
-
-    {% block content %}
-    {% endblock %}
-    <footer class="footer bg-blue">
-      <div class="container">
-          <div class="row">
-              <div class="col-md-5">
-                  <h5><i class="fa-regular fa-copyright"></i> WildHook | 2023</h5>
-                  <div class="row">
-                      <div class="col-6">
-                          <ul class="list-unstyled">
-                              <li><a href="{% url 'shop:item_list' %}">Products</a></li>
-                              <li><a href="">xx</a></li>
-                              <li><a href="">xx</a></li>
-                              <li><a href="">xx</a></li>
-                          </ul>
-                      </div>
-                      <div class="col-6">
-                          <ul class="list-unstyled">
-                              <li><a href="">xx</a></li>
-                              <li><a href="">xx</a></li>
-                              <li><a href="">xx</a></li>
-                              <li><a href="">xx</a></li>
-                          </ul>
-                      </div>
-                  </div>
-                  <ul class="nav">
-                      <li class="nav-item"><a href="" class="white nav-link pl-0"><i class="fa fa-facebook fa-lg"></i></a></li>
-                      <li class="nav-item"><a href="" class="white nav-link"><i class="fa fa-twitter fa-lg"></i></a></li>
-                      <li class="nav-item"><a href="" class="white nav-link"><i class="fa fa-github fa-lg"></i></a></li>
-                      <li class="nav-item"><a href="" class="white nav-link"><i class="fa fa-instagram fa-lg"></i></a></li>
-                  </ul>
-                  <br>
-              </div>
-              <div class="col-md-2">
-                  <h5 class="text-md-right">Contact Us</h5>
-                  <hr>
-              </div>
-              <div class="col-md-5">
-                  <form>
-                      <fieldset class="form-group">
-                          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                      </fieldset>
-                      <fieldset class="form-group">
-                          <textarea class="form-control" id="exampleMessage" placeholder="Message"></textarea>
-                      </fieldset>
-                      <fieldset class="form-group text-xs-right">
-                          <button type="button" class="btn btn-light-outline btn-lg white">Send</button>
-                      </fieldset>
-                  </form>
-              </div>
-          </div>
       </div>
+    </div>
+  </nav>
+  <div class="">
+    <div class="row">
+      <div class="col-12">
+        <div class="logo logo-container">
+          <h1 class="logo-txt white">WildHook</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-yellow">
+    <div class="row">
+      <div class="col-12 d-block blue cta-banner">
+        <h4 class="text-uppercase">
+          New Lines available <a href="{% url 'shop:item_list' %}"
+            class="btn shop-now-button rounded-0 text-uppercase blue display-4">Shop
+            Now</a>
+        </h4>
+      </div>
+    </div>
+  </div>
+
+  {% block content %}
+  {% endblock %}
+  <footer class="footer bg-blue">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <h5><i class="fa-regular fa-copyright"></i> WildHook | 2023</h5>
+          <div class="row">
+            <div class="col-6">
+              <ul class="list-unstyled">
+                <li><a href="{% url 'shop:item_list' %}">Products</a></li>
+                <li><a href="">xx</a></li>
+                <li><a href="">xx</a></li>
+                <li><a href="">xx</a></li>
+              </ul>
+            </div>
+            <div class="col-6">
+              <ul class="list-unstyled">
+                <li><a href="">xx</a></li>
+                <li><a href="">xx</a></li>
+                <li><a href="">xx</a></li>
+                <li><a href="">xx</a></li>
+              </ul>
+            </div>
+          </div>
+          <ul class="nav">
+            <li class="nav-item"><a href="" class="white nav-link pl-0"><i class="fa fa-facebook fa-lg"></i></a></li>
+            <li class="nav-item"><a href="" class="white nav-link"><i class="fa fa-twitter fa-lg"></i></a></li>
+            <li class="nav-item"><a href="" class="white nav-link"><i class="fa fa-github fa-lg"></i></a></li>
+            <li class="nav-item"><a href="" class="white nav-link"><i class="fa fa-instagram fa-lg"></i></a></li>
+          </ul>
+          <br>
+        </div>
+        <div class="col-md-2">
+          <h5 class="text-md-right">Contact Us</h5>
+          <hr>
+        </div>
+        <div class="col-md-5">
+          <form>
+            <fieldset class="form-group">
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+            </fieldset>
+            <fieldset class="form-group">
+              <textarea class="form-control" id="exampleMessage" placeholder="Message"></textarea>
+            </fieldset>
+            <fieldset class="form-group text-xs-right">
+              <button type="button" class="btn btn-light-outline btn-lg white">Send</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
   </footer>
 </body>
+
 </html>
+{% block postloadjs %}
+
+{% endblock %}

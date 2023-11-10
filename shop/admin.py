@@ -9,6 +9,7 @@ class ItemAdmin(admin.ModelAdmin):
         'offer_price',
         'image',
     )
+    ordering = ('title',)
 
 
 class OrderItemAdmin(admin.ModelAdmin):
@@ -17,7 +18,7 @@ class OrderItemAdmin(admin.ModelAdmin):
         'ordered',
         'quantity',
     )
-
+    
 
 class OrderAdmin(admin.ModelAdmin):
    list_display = (
@@ -25,6 +26,7 @@ class OrderAdmin(admin.ModelAdmin):
         'ordered',
         'ordered_date',
     )
+    
 
 admin.site.register(Item, ItemAdmin)
 admin.site.register(OrderItem, OrderItemAdmin)

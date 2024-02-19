@@ -30,9 +30,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['8000-jonnydavison-wildhook-oqzgo8b2r2m.ws-eu105.gitpod.io']
+# ALLOWED_HOSTS = ['8000-jonnydavison-wildhook-9pxva2zv1o4.ws-eu108.gitpod.io']
 ALLOWED_HOSTS = ['wildhook-72f0fa2bfc47.herokuapp.com']
-
 
 # Application definition
 
@@ -53,6 +52,7 @@ INSTALLED_APPS = [
     'django_countries',
 
     'home',
+    'products',
     'shop',
     'payment',
 ]
@@ -170,4 +170,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CRISPY FORMS 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-CSRF_TRUSTED_ORIGINS = ['https://8000-jonnydavison-wildhook-oqzgo8b2r2m.ws-eu105.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-jonnydavison-wildhook-9pxva2zv1o4.ws-eu108.gitpod.io','https://wildhook-72f0fa2bfc47.herokuapp.com']
+

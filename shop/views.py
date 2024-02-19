@@ -167,6 +167,8 @@ class CheckoutView(View):
             return redirect('shop:order_summary')
         
 
-class PaymentView():
-    def get(self, *args, **kwargs):
-        return render(self.request, "shop/payment.html")
+# class PaymentView():
+    
+#     def get(self, *args, **kwargs):
+
+#     return render(self.request, "shop/payment.html")

@@ -1,0 +1,72 @@
+[
+    {
+       "pk":1,
+       "model":"products.product",
+       "fields":{
+          "sku":"pp5001340155",
+          "name":"Orvis Fly Rod",
+          "description":"The Helios 3F 3-weight, 11-foot Fly Rod takes Euro nymphing to the next level.",
+          "price":465.55,
+          "category":1,
+          "rating":4.6,
+          "image_url":"/workspace/WildHook/media/webimages/OrvisRod.webp",
+          "image":"OrvisRod.webp"
+       }
+    },
+    {
+       "pk":2,
+       "model":"products.product",
+       "fields":{
+          "sku":"pp5001600425",
+          "name":"Test reel Product",
+          "description":"Test test test test description",
+          "price":598.99,
+          "category":2,
+          "rating":4.6,
+          "image_url":"media/webimages/KarolinaGrabowska-pexels.webp",
+          "image":"KarolinaGrabowska-pexels.webp"
+       }
+    },
+    {
+        "pk":3,
+        "model":"products.product",
+        "fields":{
+           "sku":"pp5001600425",
+           "name":"Test Sea Fishing Product",
+           "description":"Test test test test description",
+           "price":598.99,
+           "category":3,
+           "rating":4.6,
+           "image_url":"media/webimages/KarolinaGrabowska-pexels.webp",
+           "image":"KarolinaGrabowska-pexels.webp"
+        }
+     },
+     {
+        "pk":4,
+        "model":"products.product",
+        "fields":{
+           "sku":"pp5001600425",
+           "name":"Test river Fishing Product",
+           "description":"Test test test test description",
+           "price":598.99,
+           "category":3,
+           "rating":4.6,
+           "image_url":"media/webimages/KarolinaGrabowska-pexels.webp",
+           "image":"KarolinaGrabowska-pexels.webp"
+        }
+     },
+     {
+        "pk":5,
+        "model":"products.product",
+        "fields":{
+           "sku":"pp5001600425",
+           "name":"Test new arrival Product",
+           "description":"Test test test test description",
+           "price":598.99,
+           "category":3,
+           "rating":4.6,
+           "image_url":"media/webimages/KarolinaGrabowska-pexels.webp",
+           "image":"KarolinaGrabowska-pexels.webp"
+        }
+     },
+]

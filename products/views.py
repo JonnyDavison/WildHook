@@ -16,12 +16,12 @@ def all_products(request):
     return render(request, 'products/products.html', context)
 
 
-def product_detail(request):
+def product_detail(request, product_id):
     """
     A view to return Product detail page
     """
 
-    product = get_oject_of_404(Product, pk=product_id)
+    product = get_object_or_404(Product, pk=product_id)
 
     context = {
         'product': product,

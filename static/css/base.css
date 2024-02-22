@@ -19,6 +19,10 @@ body {
     margin-bottom: 300px;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* Color pallet */
 .yellow {
     color: #DAA520;
@@ -318,6 +322,36 @@ footer .form-control {
 
 .bin {
     color: red;
+}
+
+.top-button {
+    border: solid 1px #DAA520;
+    background-color: #0D3D6D;
+    color: #DAA520;
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.top-button > a > i {
+    color: #DAA520;
+}
+
+.top-button > a > i:hover {
+    color: #0D3D6D;
+}
+
+.top-button:hover {
+    background-color: #DAA520;
+    color: #0D3D6D;
+}
+
+
+.btt-link {
+    cursor: pointer;
 }
 /* MESSAGES */
 

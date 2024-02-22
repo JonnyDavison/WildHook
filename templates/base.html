@@ -66,9 +66,15 @@
           {% if request.user.is_authenticated %}
           <li class="nav-item">
             <a href="{% url 'bag' %}" class="nav-link blue waves-effect">
-              <span class="badge red z-depth-1 mr-1 bg-yellow blue"> {{ request.user|basket_item_count}} </span>
+              <span class="badge red z-depth-1 mr-1 bg-yellow blue"> 
+                  {% if product_count %}
+                    {{ product_count }}
+                  {% else %}
+                    0
+                  {% endif %}
+              </span>
               <i class="bi bi-cart3"></i>
-              <span class="clearfix d-none d-sm-inline-block"> Basket</span>
+              <span class="clearfix d-none d-sm-inline-block"> Cart</span>
             </a>
           </li>
           <li class="nav-item">

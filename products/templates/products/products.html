@@ -20,7 +20,7 @@
             {% for product in products %}
             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-5">
                 <div class="card h-100">
-                    <a href="" class="ratio ratio-4x3">
+                    <a href="{% url 'product_detail' product.id %}" class="ratio ratio-4x3">
                         {% if product.image %}
                         <img src="/media/webimages/{{ product.image }}" class="card-img-top" alt="{{ item.name }}">
                         {% else %}
@@ -29,7 +29,7 @@
                         {% endif %}
                     </a>
                     <div class="card-body">
-                        <a href="">
+                        <a href="{% url 'product_detail' product.id %}">
                             <h5 class="card-title">{{ product.name }}</h5>
                         </a>
                         <h5 class="card-title">

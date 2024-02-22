@@ -85,6 +85,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'bag.contexts.bag_contents',
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
@@ -175,3 +176,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 CSRF_TRUSTED_ORIGINS = ['https://8000-jonnydavison-wildhook-9pxva2zv1o4.ws-eu108.gitpod.io','https://wildhook-72f0fa2bfc47.herokuapp.com']
 
+
+FREE_DELIVERY = 250
+DELIVERY_PERCENTAGE = 10

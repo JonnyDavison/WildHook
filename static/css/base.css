@@ -416,6 +416,22 @@ select option[value=""] {
     margin: 0;
     height: 100%;
 }
+
+/* PRODUCTS PAGE  */
+
+/* Product cards */
+
+.rating {
+    font-size: medium;
+    color: slategray;
+}
+
+.rating > p > i {
+    color: #DAA520;
+}
+
+
+
 /* MEDIA QUERIES */
 
 /* // Small devices (landscape phones, 576px and down) */

@@ -54,9 +54,9 @@
             </ul>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" id="search" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn blue" type="submit">Search</button>
+        <form class="d-flex" method="GET" action="{% url 'products' %}" role="search">
+          <input class="form-control me-2" name="q" placeholder="Search" aria-label="Search">
+          <button class="btn blue" type="submit"><i class="fas fa-search"></i></button>
         </form>
         <ul class="navbar-nav nav-flex-icons">
           {% if request.user.is_authenticated %}

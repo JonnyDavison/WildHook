@@ -41,8 +41,7 @@
                             {% else %}
                             <span>£{{ product.price }}</span>
                             {% endif %}
-                            <span
-                                class="badge badge-pill bg-{{ product.get_label_display }}">{{ product.get_tag_display }}</span>
+                            <span class="badge badge-pill bg-{{ product.get_label_display }}">{{ product.get_tag_display }}</span>
                             <div class="rating">
                                 {% if product.rating %}
                                 <p class="text-muted"><i class="fa-regular fa-star"></i>{{ product.rating }}</p>

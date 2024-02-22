@@ -48,9 +48,11 @@
             </a>
             <ul class="dropdown-menu bg-yellow">
               <li><a class="dropdown-item blue" href="{% url 'products' %}">Shop</a></li>
-              <li><a class="dropdown-item blue" href="#">Lures</a></li>
-              <li><a class="dropdown-item blue" href="#">Reels</a></li>
-              <li><a class="dropdown-item blue" href="#">TBC</a></li>
+              <li><a class="dropdown-item blue" href="{% url 'products' %}?category=new_arrivals">New Arrivals</a></li>
+              <li><a class="dropdown-item blue" href="{% url 'products' %}?category=rods">Rods</a></li>
+              <li><a class="dropdown-item blue" href="{% url 'products' %}?category=reels">Reels</a></li>
+              <li><a class="dropdown-item blue" href="{% url 'products' %}?category=sea_fishing">Sea Fishing</a></li>
+              <li><a class="dropdown-item blue" href="{% url 'products' %}?category=river_fishing">River Fishing</a></li>
             </ul>
           </li>
         </ul>

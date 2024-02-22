@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="w-100 ">
+    <div class="row">
+        <div class="col-12">
+            <div class="">
+                <h1 class="page-banner white">Shopping Bag</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mb-2">
+    <div class="row">
+        <div class="col">
+            {% if bag_items %}
+                <div class="table-responsive rounded">
+            {% else %}
+                <p>Your Bag is Empty</p>
+                <a href="{% url 'products' %}" class="btn btn-lg shop-now-button">
+                    <span class="icon"><i class="fas fa-chevron-left"></i></span>
+                    <span class="text-uppercase">Keep Shopping</span>
+                </a>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

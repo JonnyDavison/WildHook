@@ -56,14 +56,16 @@
             </ul>
           </li>
         </ul>
+
         <form class="d-flex" method="GET" action="{% url 'products' %}" role="search">
           <input class="form-control me-2" name="q" placeholder="Search" aria-label="Search">
           <button class="btn blue" type="submit"><i class="fas fa-search"></i></button>
         </form>
+
         <ul class="navbar-nav nav-flex-icons">
           {% if request.user.is_authenticated %}
           <li class="nav-item">
-            <a href="{% url 'shop:order_summary' %}" class="nav-link blue waves-effect">
+            <a href="{% url 'bag' %}" class="nav-link blue waves-effect">
               <span class="badge red z-depth-1 mr-1 bg-yellow blue"> {{ request.user|basket_item_count}} </span>
               <i class="bi bi-cart3"></i>
               <span class="clearfix d-none d-sm-inline-block"> Basket</span>
@@ -104,7 +106,7 @@
       <div class="col-12 d-block blue cta-banner">
         <h4 class="text-uppercase">
           New Lines available <a href="{% url 'products' %}"
-            class="btn shop-now-button rounded-0 text-uppercase blue display-4">Shop
+            class="btn shop-now-button rounded text-uppercase blue display-4">Shop
             Now</a>
         </h4>
       </div>

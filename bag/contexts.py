@@ -12,15 +12,27 @@ def bag_contents(request):
     total = 0
     product_count = 0
     bag = request.session.get('bag', {})
+    saving = 0
 
     for item_id, quantity in bag.items():
         product = get_object_or_404(Product, pk=item_id)
         total += quantity * product.price
         product_count += quantity
+        offer_price = product.offer_price
+
+        if offer_price is not None:
+            sub_total = offer_price * quantity
+            saving = (product.price * quantity) - (product.offer_price * quantity)
+        else:
+            sub_total = total
+
         bag_items.append({
             'item_id': item_id,
             'quantity': quantity,
             'product': product,
+            'offer_price': offer_price,
+            'sub_total': sub_total,
+            'saving': saving
         })
 
     if total < settings.FREE_DELIVERY:

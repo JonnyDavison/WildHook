@@ -13,12 +13,94 @@
     </div>
 </div>
 
+<div class="">
+    <div class="row">
+        <div class="col-10 col-sm-8 offset-sm-2 blue">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Item</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Sub-Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in bag_items %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                    
+                        <td>{{ item.product.name }}</td>
 
-<div class="container mb-2">
+                        <td>{% if item.product.offer_price %}
+                            <span class="mr-1">
+                                <del>£{{ item.product.price }}</del>
+                            </span>
+                            <span>£{{ item.product.offer_price }}</span>
+                            {% else %}
+                            <span>£{{ item.product.price }}</span>
+                            {% endif %}
+                        </td>
+
+                        <td>
+                            <a href=""><i class="fas fa-minus me-2"></i></a>
+                            {{ item.quantity }}
+                            <a href=""><i class="fas fa-plus ms-2"></i></a>
+                        </td>
+                        <td>
+                            {% if item.product.offer_price  %}
+                            £{{ item.sub_total|floatformat:2 }}
+                            <span class="badge blue">Saving £{{ item.saving }}!</span>
+                            {% else %}
+                            £{{ item.sub_total|floatformat:2 }}
+                            {% endif %}
+                            <a class="bin" href="">
+                                <i class="fas fa-trash float-end"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan='5'>Your cart is empty</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+                            <a class='btn add-btn float-end' href="{% url 'shop:item_list' %}">Continue shopping</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    {% if object.coupon %}
+                    <tr>
+                        <td colspan="4"><b>Discount Code</b></td>
+                        <td><b>-£{{ object.coupon.amount }}</b></td>
+                    </tr>
+                    {% endif %}
+                    {% if object.get_total %}
+                    <tr>
+                        <td colspan="4"><b>Order Total</b></td>
+                        <td><b>£{{ object.get_total }}</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+                            <a class='btn add-btn float-end blue ms-2' href='/payment/'>Proceed to checkout</a>
+                            <a class='btn bg-blue yellow float-end continue-btn '
+                                href="{% url 'shop:item_list' %}">Continue shopping</a>
+                        </td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- <div class="container mb-2">
     <div class="row">
         <div class="col">
             {% if bag_items %}
                 <div class="table-responsive rounded">
+                    {{ bag_items }}
+                </div>
             {% else %}
                 <p>Your Bag is Empty</p>
                 <a href="{% url 'products' %}" class="btn btn-lg shop-now-button">
@@ -26,8 +108,8 @@
                     <span class="text-uppercase">Keep Shopping</span>
                 </a>
             {% endif %}
-            </div>
+            
         </div>
     </div>
-</div>
+</div> -->
 {% endblock %}

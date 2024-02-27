@@ -150,6 +150,7 @@ a {
 .shop-now-button:hover {
     border: 1px solid #fff;
     color: #fff;
+    background-color: #0D3D6D;
 }
 
 /* Promotion Section Home Page */

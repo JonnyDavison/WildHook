@@ -30,48 +30,513 @@
                 <div class="product-details-container mb-5 mt-md-5">
                     <h3 class="mb-3">{{ product.name }}</h3>
                     <h6>
-                    {% if product.offer_price %}
-                    <span class="mr-1">
-                        <del>£{{ product.price }}</del>
-                    </span>
-                    <span>£{{ product.offer_price }}</span>
-                    {% else %}
-                    <span>£{{ product.price }}</span>
-                    {% endif %}
-                    <span class="badge badge-pill bg-{{ product.get_label_display }}">{{ product.get_tag_display }}</span>
-                    <div class="rating">
-                        {% if product.rating %}
-                        <p class="text-muted"><i class="fa-regular fa-star"></i>{{ product.rating }}</p>
+                        {% if product.offer_price %}
+                        <span class="mr-1">
+                            <del>£{{ product.price }}</del>
+                        </span>
+                        <span>£{{ product.offer_price }}</span>
                         {% else %}
-                        <p>No ratings yet!</p>
+                        <span>£{{ product.price }}</span>
                         {% endif %}
-                    </div>
-                    <p class="card-text">{{ product.description }}</p>
-                    
-                    <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
-                        {% csrf_token %}
-                        <div class="form-row">
-                            <div class="col-12">
-                                <p class="mt-3"><strong>Quantity:</strong></p>
-                                <div class="form-group w-50">
-                                    <div class="input-group">
-                                        <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                        <span
+                            class="badge badge-pill bg-{{ product.get_label_display }}">{{ product.get_tag_display }}</span>
+                        <div class="rating">
+                            {% if product.rating %}
+                            <p class="text-muted"><i class="fa-regular fa-star"></i>{{ product.rating }}</p>
+                            {% else %}
+                            <p>No ratings yet!</p>
+                            {% endif %}
+                        </div>
+                        <p class="card-text">{{ product.description }}</p>
+                        {% with product.has_sizes as s %}
+                        {% if s %}
+                        <!-- Modal Button -->
+                        <button type="button" class="btn shop-now-button btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">Hook Size Chart</button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Hook Size Chart</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p> The system starts at size 12, which are the smallest
+                                            freshwater hooks, size 1 is the largest freshwater hook. After this, they move into
+                                            the sea fishing scale which adds a /0 to the size and range from 1/0 to 12/0. 
+                                            <br>
+                                            <br>
+                                            Below is a chart of the sizes we carry at WildHook which range from smallest size 12 to largest 10/0
+                                        </p>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table style="margin-left: auto; margin-right: auto;">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="width: 40.7344px;">
+                                                        <div style="text-align: center;"><b>Size</b></div>
+                                                    </td>
+                                                    <td style="text-align: center; width: 119.594px;">
+                                                        <div><b>Length (mm)</b></div>
+                                                    </td>
+                                                    <td style="text-align: center; width: 92.5px;">
+                                                        <div><b>Gap (mm)</b></div>
+                                                    </td>
+                                                    <td style="text-align: center; width: 145.578px;">
+                                                        <div><b>Length (inches)</b></div>
+                                                    </td>
+                                                    <td style="text-align: center; width: 118.594px;">
+                                                        <div><b>Gap (inches)</b></div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="text-align: center;">
+                                                    <td style="width: 40.7344px;">
+                                                        <div><span style="font-weight: 400;">#12</span></div>
+                                                    </td>
+                                                    <td style="width: 119.594px;">
+                                                        <div><span style="font-weight: 400;">9mm</span></div>
+                                                    </td>
+                                                    <td style="width: 92.5px;">
+                                                        <div><span style="font-weight: 400;">3mm</span></div>
+                                                    </td>
+                                                    <td style="width: 145.578px;">
+                                                        <div><span style="font-weight: 400;">0.35″</span></div>
+                                                    </td>
+                                                    <td style="width: 118.594px;">
+                                                        <div><span style="font-weight: 400;">0.118″</span></div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="text-align: center;">
+                                                    <td style="width: 40.7344px;">
+                                                        <div><span style="font-weight: 400;">#11</span></div>
+                                                    </td>
+                                                    <td style="width: 119.594px;">
+                                                        <div><span style="font-weight: 400;">10mm</span></div>
+                                                    </td>
+                                                    <td style="width: 92.5px;">
+                                                        <div><span style="font-weight: 400;">4mm</span></div>
+                                                    </td>
+                                                    <td style="width: 145.578px;">
+                                                        <div><span style="font-weight: 400;">0.39″</span></div>
+                                                    </td>
+                                                    <td style="width: 118.594px;">
+                                                        <div><span style="font-weight: 400;">0.157″</span></div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="text-align: center;">
+                                                    <td style="width: 40.7344px;">
+                                                        <div><span style="font-weight: 400;">#10</span></div>
+                                                    </td>
+                                                    <td style="width: 119.594px;">
+                                                        <div><span style="font-weight: 400;">11mm</span></div>
+                                                    </td>
+                                                    <td style="width: 92.5px;">
+                                                        <div><span style="font-weight: 400;">5mm</span></div>
+                                                    </td>
+                                                    <td style="width: 145.578px;">
+                                                        <div><span style="font-weight: 400;">0.43″</span></div>
+                                                    </td>
+                                                    <td style="width: 118.594px;">
+                                                        <div><span style="font-weight: 400;">0.196″</span></div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="text-align: center;">
+                                                    <td style="width: 40.7344px;">
+                                                        <div><span style="font-weight: 400;">#9</span></div>
+                                                    </td>
+                                                    <td style="width: 119.594px;">
+                                                        <div><span style="font-weight: 400;">12mm</span></div>
+                                                    </td>
+                                                    <td style="width: 92.5px;">
+                                                        <div><span style="font-weight: 400;">6mm</span></div>
+                                                    </td>
+                                                    <td style="width: 145.578px;">
+                                                        <div><span style="font-weight: 400;">0.47″</span></div>
+                                                    </td>
+                                                    <td style="width: 118.594px;">
+                                                        <div><span style="font-weight: 400;">0.236″</span></div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="text-align: center;">
+                                                    <td style="width: 40.7344px;">
+                                                        <div><span style="font-weight: 400;">#8</span></div>
+                                                    </td>
+                                                    <td style="width: 119.594px;">
+                                                        <div><span style="font-weight: 400;">13mm</span></div>
+                                                    </td>
+                                                    <td style="width: 92.5px;">
+                                                        <div><span style="font-weight: 400;">7mm</span></div>
+                                                    </td>
+                                                    <td style="width: 145.578px;">
+                                                        <div><span style="font-weight: 400;">0.51″</span></div>
+                                                    </td>
+                                                    <td style="width: 118.594px;">
+                                                        <div><span style="font-weight: 400;">0.27″</span></div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="text-align: center;">
+                                                    <td style="width: 40.7344px;">
+                                                        <div><span style="font-weight: 400;">#7</span></div>
+                                                    </td>
+                                                    <td style="width: 119.594px;">
+                                                        <div><span style="font-weight: 400;">14mm</span></div>
+                                                    </td>
+                                                    <td style="width: 92.5px;">
+                                                        <div><span style="font-weight: 400;">8mm</span></div>
+                                                    </td>
+                                                    <td style="width: 145.578px;">
+                                                        <div><span style="font-weight: 400;">0.55″</span></div>
+                                                    </td>
+                                                    <td style="width: 118.594px;">
+                                                        <div><span style="font-weight: 400;">0.31″</span></div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="text-align: center;">
+                                                    <td style="width: 40.7344px;">
+                                                        <div><span style="font-weight: 400;">#6</span></div>
+                                                    </td>
+                                                    <td style="width: 119.594px;">
+                                                        <div><span style="font-weight: 400;">15mm</span></div>
+                                                    </td>
+                                                    <td style="width: 92.5px;">
+                                                        <div><span style="font-weight: 400;">9mm</span></div>
+                                                    </td>
+                                                    <td style="width: 145.578px;">
+                                                        <div><span style="font-weight: 400;">0.59″</span></div>
+                                                    </td>
+                                                    <td style="width: 118.594px;">
+                                                        <div><span style="font-weight: 400;">0.35″</span></div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="text-align: center;">
+                                                    <td style="width: 40.7344px;">
+                                                        <div><span style="font-weight: 400;">#5</span></div>
+                                                    </td>
+                                                    <td style="width: 119.594px;">
+                                                        <div><span style="font-weight: 400;">16mm</span></div>
+                                                    </td>
+                                                    <td style="width: 92.5px;">
+                                                        <div><span style="font-weight: 400;">11mm</span></div>
+                                                    </td>
+                                                    <td style="width: 145.578px;">
+                                                        <div><span style="font-weight: 400;">0.63″</span></div>
+                                                    </td>
+                                                    <td style="width: 118.594px;">
+                                                        <div><span style="font-weight: 400;">0.43″</span></div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="text-align: center;">
+                                                    <td style="width: 40.7344px;">
+                                                        <div><span style="font-weight: 400;">#4</span></div>
+                                                    </td>
+                                                    <td style="width: 119.594px;">
+                                                        <div><span style="font-weight: 400;">17mm</span></div>
+                                                    </td>
+                                                    <td style="width: 92.5px;">
+                                                        <div><span style="font-weight: 400;">12mm</span></div>
+                                                    </td>
+                                                    <td style="width: 145.578px;">
+                                                        <div><span style="font-weight: 400;">0.67″</span></div>
+                                                    </td>
+                                                    <td style="width: 118.594px;">
+                                                        <div><span style="font-weight: 400;">0.47″</span></div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="text-align: center;">
+                                                    <td style="width: 40.7344px;">
+                                                        <div><span style="font-weight: 400;">#3</span></div>
+                                                    </td>
+                                                    <td style="width: 119.594px;">
+                                                        <div><span style="font-weight: 400;">20mm</span></div>
+                                                    </td>
+                                                    <td style="width: 92.5px;">
+                                                        <div><span style="font-weight: 400;">13mm</span></div>
+                                                    </td>
+                                                    <td style="width: 145.578px;">
+                                                        <div><span style="font-weight: 400;">0.78″</span></div>
+                                                    </td>
+                                                    <td style="width: 118.594px;">
+                                                        <div><span style="font-weight: 400;">0.51″</span></div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="text-align: center;">
+                                                    <td style="width: 40.7344px;">
+                                                        <div><span style="font-weight: 400;">#2</span></div>
+                                                    </td>
+                                                    <td style="width: 119.594px;">
+                                                        <div><span style="font-weight: 400;">22mm</span></div>
+                                                    </td>
+                                                    <td style="width: 92.5px;">
+                                                        <div><span style="font-weight: 400;">14mm</span></div>
+                                                    </td>
+                                                    <td style="width: 145.578px;">
+                                                        <div><span style="font-weight: 400;">0.86″</span></div>
+                                                    </td>
+                                                    <td style="width: 118.594px;">
+                                                        <div><span style="font-weight: 400;">0.55″</span></div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="text-align: center;">
+                                                    <td style="width: 40.7344px;">
+                                                        <div><span style="font-weight: 400;">#1</span></div>
+                                                    </td>
+                                                    <td style="width: 119.594px;">
+                                                        <div><span style="font-weight: 400;">25mm</span></div>
+                                                    </td>
+                                                    <td style="width: 92.5px;">
+                                                        <div><span style="font-weight: 400;">15mm</span></div>
+                                                    </td>
+                                                    <td style="width: 145.578px;">
+                                                        <div><span style="font-weight: 400;">0.98″”</span></div>
+                                                    </td>
+                                                    <td style="width: 118.594px;">
+                                                        <div><span style="font-weight: 400;">0.59″”</span></div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="text-align: center;">
+                                                    <td style="width: 40.7344px;">
+                                                        <div><span style="font-weight: 400;">1/0</span></div>
+                                                    </td>
+                                                    <td style="width: 119.594px;">
+                                                        <div><span style="font-weight: 400;">34mm</span></div>
+                                                    </td>
+                                                    <td style="width: 92.5px;">
+                                                        <div><span style="font-weight: 400;">16mm</span></div>
+                                                    </td>
+                                                    <td style="width: 145.578px;">
+                                                        <div><span style="font-weight: 400;">1.33″</span></div>
+                                                    </td>
+                                                    <td style="width: 118.594px;">
+                                                        <div><span style="font-weight: 400;">0.63″</span></div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="text-align: center;">
+                                                    <td style="width: 40.7344px;">
+                                                        <div><span style="font-weight: 400;">2/0</span></div>
+                                                    </td>
+                                                    <td style="width: 119.594px;">
+                                                        <div><span style="font-weight: 400;">39mm</span></div>
+                                                    </td>
+                                                    <td style="width: 92.5px;">
+                                                        <div><span style="font-weight: 400;">17mm</span></div>
+                                                    </td>
+                                                    <td style="width: 145.578px;">
+                                                        <div><span style="font-weight: 400;">1.53″</span></div>
+                                                    </td>
+                                                    <td style="width: 118.594px;">
+                                                        <div><span style="font-weight: 400;">0.67″</span></div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="text-align: center;">
+                                                    <td style="width: 40.7344px;">
+                                                        <div><span style="font-weight: 400;">3/0</span></div>
+                                                    </td>
+                                                    <td style="width: 119.594px;">
+                                                        <div><span style="font-weight: 400;">42mm</span></div>
+                                                    </td>
+                                                    <td style="width: 92.5px;">
+                                                        <div><span style="font-weight: 400;">18mm</span></div>
+                                                    </td>
+                                                    <td style="width: 145.578px;">
+                                                        <div><span style="font-weight: 400;">1.65″</span></div>
+                                                    </td>
+                                                    <td style="width: 118.594px;">
+                                                        <div><span style="font-weight: 400;">0.70″</span></div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="text-align: center;">
+                                                    <td style="width: 40.7344px;">
+                                                        <div><span style="font-weight: 400;">4/0</span></div>
+                                                    </td>
+                                                    <td style="width: 119.594px;">
+                                                        <div><span style="font-weight: 400;">47mm</span></div>
+                                                    </td>
+                                                    <td style="width: 92.5px;">
+                                                        <div><span style="font-weight: 400;">19mm</span></div>
+                                                    </td>
+                                                    <td style="width: 145.578px;">
+                                                        <div><span style="font-weight: 400;">1.85″</span></div>
+                                                    </td>
+                                                    <td style="width: 118.594px;">
+                                                        <div><span style="font-weight: 400;">0.74″</span></div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="text-align: center;">
+                                                    <td style="width: 40.7344px;">
+                                                        <div><span style="font-weight: 400;">5/0</span></div>
+                                                    </td>
+                                                    <td style="width: 119.594px;">
+                                                        <div><span style="font-weight: 400;">52mm</span></div>
+                                                    </td>
+                                                    <td style="width: 92.5px;">
+                                                        <div><span style="font-weight: 400;">21mm</span></div>
+                                                    </td>
+                                                    <td style="width: 145.578px;">
+                                                        <div><span style="font-weight: 400;">2.04″</span></div>
+                                                    </td>
+                                                    <td style="width: 118.594px;">
+                                                        <div><span style="font-weight: 400;">0.82″</span></div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="text-align: center;">
+                                                    <td style="width: 40.7344px;">
+                                                        <div><span style="font-weight: 400;">6/0</span></div>
+                                                    </td>
+                                                    <td style="width: 119.594px;">
+                                                        <div><span style="font-weight: 400;">59mm</span></div>
+                                                    </td>
+                                                    <td style="width: 92.5px;">
+                                                        <div><span style="font-weight: 400;">23mm</span></div>
+                                                    </td>
+                                                    <td style="width: 145.578px;">
+                                                        <div><span style="font-weight: 400;">2.32″</span></div>
+                                                    </td>
+                                                    <td style="width: 118.594px;">
+                                                        <div><span style="font-weight: 400;">0.90″</span></div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="text-align: center;">
+                                                    <td style="width: 40.7344px;">
+                                                        <div><span style="font-weight: 400;">7/0</span></div>
+                                                    </td>
+                                                    <td style="width: 119.594px;">
+                                                        <div><span style="font-weight: 400;">65mm</span></div>
+                                                    </td>
+                                                    <td style="width: 92.5px;">
+                                                        <div><span style="font-weight: 400;">25mm</span></div>
+                                                    </td>
+                                                    <td style="width: 145.578px;">
+                                                        <div><span style="font-weight: 400;">2.56″</span></div>
+                                                    </td>
+                                                    <td style="width: 118.594px;">
+                                                        <div><span style="font-weight: 400;">0.98″</span></div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="text-align: center;">
+                                                    <td style="width: 40.7344px;">
+                                                        <div><span style="font-weight: 400;">8/0</span></div>
+                                                    </td>
+                                                    <td style="width: 119.594px;">
+                                                        <div><span style="font-weight: 400;">72mm</span></div>
+                                                    </td>
+                                                    <td style="width: 92.5px;">
+                                                        <div><span style="font-weight: 400;">28mm</span></div>
+                                                    </td>
+                                                    <td style="width: 145.578px;">
+                                                        <div><span style="font-weight: 400;">2.83″</span></div>
+                                                    </td>
+                                                    <td style="width: 118.594px;">
+                                                        <div><span style="font-weight: 400;">1.10″</span></div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="text-align: center;">
+                                                    <td style="width: 40.7344px;">
+                                                        <div><span style="font-weight: 400;">9/0</span></div>
+                                                    </td>
+                                                    <td style="width: 119.594px;">
+                                                        <div><span style="font-weight: 400;">78mm</span></div>
+                                                    </td>
+                                                    <td style="width: 92.5px;">
+                                                        <div><span style="font-weight: 400;">31mm</span></div>
+                                                    </td>
+                                                    <td style="width: 145.578px;">
+                                                        <div><span style="font-weight: 400;">3.07″</span></div>
+                                                    </td>
+                                                    <td style="width: 118.594px;">
+                                                        <div><span style="font-weight: 400;">1.22″</span></div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="text-align: center;">
+                                                    <td style="width: 40.7344px;">
+                                                        <div><span style="font-weight: 400;">10/0</span></div>
+                                                    </td>
+                                                    <td style="width: 119.594px;">
+                                                        <div><span style="font-weight: 400;">90mm</span></div>
+                                                    </td>
+                                                    <td style="width: 92.5px;">
+                                                        <div><span style="font-weight: 400;">37mm</span></div>
+                                                    </td>
+                                                    <td style="width: 145.578px;">
+                                                        <div><span style="font-weight: 400;">3.54″</span></div>
+                                                    </td>
+                                                    <td style="width: 118.594px;">
+                                                        <div><span style="font-weight: 400;">1.45″</span></div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-sm shop-now-button"
+                                            data-bs-dismiss="modal">Close</button>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col-12">
-                                <a href="{% url 'products' %}" class="btn mt-5 shop-now-button">
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="text-uppercase">Keep Shopping</span>
-                                </a>
-                                <input type="submit" class="btn shop-now-button text-uppercase mt-5" value="Add to Bag">
-                            </div>
-                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
-                    </form>
+                        {% endif %}
+                        {% endwith %}
+                        <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                            {% csrf_token %}
+                            <div class="form-row">
+                                {% with product.has_sizes as s %}
+                                {% if s %}
+                                <div class="col-12">
+                                    <p><strong>Size:</strong></p>
+                                    <select class="form-control rounded-0 w-50" name="product_size"
+                                        id='id_product_size'>
+                                        <option value="12">#12</option>
+                                        <option value="11">#11</option>
+                                        <option value="10">#10</option>
+                                        <option value="9">#9</option>
+                                        <option value="8">#8</option>
+                                        <option value="7">#7</option>
+                                        <option value="6">#6</option>
+                                        <option value="5">#5</option>
+                                        <option value="4">#4</option>
+                                        <option value="3">#3</option>
+                                        <option value="2">#2</option>
+                                        <option value="1">#1</option>
+                                        <option value="1/0" selected>1/0</option>
+                                        <option value="2/0">2/0</option>
+                                        <option value="3/0">3/0</option>
+                                        <option value="4/0">4/0</option>
+                                        <option value="5/0">5/0</option>
+                                        <option value="6/0">6/0</option>
+                                        <option value="7/0">7/0</option>
+                                        <option value="8/0">8/0</option>
+                                        <option value="9/0">9/0</option>
+                                        <option value="10/0">10/0</option>
+                                    </select>
+                                </div>
+                                {% endif %}
+                                <div class="col-12">
+                                    <p class="mt-3"><strong>Quantity:</strong></p>
+                                    <div class="form-group w-50">
+                                        <div class="input-group">
+                                            <input class="form-control qty_input" type="number" name="quantity"
+                                                value="1" min="1" max="99" data-item_id="{{ product.id }}"
+                                                id="id_qty_{{ product.id }}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col{% if s %}-12 mt-2{% endif %}">
+                                    <a href="{% url 'products' %}" class="btn mt-5 shop-now-button">
+                                        <span class="icon">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </span>
+                                        <span class="text-uppercase">Keep Shopping</span>
+                                    </a>
+                                    <input type="submit" class="btn shop-now-button text-uppercase mt-5"
+                                        value="Add to Bag">
+                                </div>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                {% endwith %}
+                            </div>
+                        </form>
 
                     </h6>
                 </div>

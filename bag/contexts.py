@@ -49,8 +49,7 @@ def bag_contents(request):
                     'saving': saving,
                     'size': size
                 })
- 
- 
+
     if total < settings.FREE_DELIVERY:
         delivery = total * Decimal(settings.DELIVERY_PERCENTAGE / 100)
         free_delivery_delta = settings.FREE_DELIVERY - total

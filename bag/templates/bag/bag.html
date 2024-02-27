@@ -66,16 +66,11 @@
                     </tr>
                     <tr>
                         <td colspan="5">
-                            <a class='btn add-btn float-end' href="{% url 'shop:item_list' %}">Continue shopping</a>
+                            <a class='btn add-btn float-end' href="{% url 'products' %}">Continue shopping</a>
                         </td>
                     </tr>
                     {% endfor %}
-                    {% if object.coupon %}
-                    <tr>
-                        <td colspan="4"><b>Discount Code</b></td>
-                        <td><b>-£{{ object.coupon.amount }}</b></td>
-                    </tr>
-                    {% endif %}
+                    
                     {% if object.get_total %}
                     <tr>
                         <td colspan="4"><b>Order Total</b></td>
@@ -85,7 +80,7 @@
                         <td colspan="5">
                             <a class='btn add-btn float-end blue ms-2' href='/payment/'>Proceed to checkout</a>
                             <a class='btn bg-blue yellow float-end continue-btn '
-                                href="{% url 'shop:item_list' %}">Continue shopping</a>
+                                href="">Continue shopping</a>
                         </td>
                     </tr>
                     {% endif %}
@@ -94,22 +89,4 @@
         </div>
     </div>
 </div>
-<!-- <div class="container mb-2">
-    <div class="row">
-        <div class="col">
-            {% if bag_items %}
-                <div class="table-responsive rounded">
-                    {{ bag_items }}
-                </div>
-            {% else %}
-                <p>Your Bag is Empty</p>
-                <a href="{% url 'products' %}" class="btn btn-lg shop-now-button">
-                    <span class="icon"><i class="fas fa-chevron-left"></i></span>
-                    <span class="text-uppercase">Keep Shopping</span>
-                </a>
-            {% endif %}
-            
-        </div>
-    </div>
-</div> -->
 {% endblock %}

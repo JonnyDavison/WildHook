@@ -13,10 +13,10 @@
     </div>
 </div>
 
-<div class="">
+
     <div class="row">
-        <div class="col-10 col-sm-8 offset-sm-2 blue">
-            <table class="table">
+        <div class="col-12 col-sm-8 offset-sm-2 blue">
+            <table class="table bag-table">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -30,7 +30,7 @@
                     {% for item in bag_items %}
                     <tr>
                         <th scope="row">{{ forloop.counter }}</th>
-                    
+
                         <td>{{ item.product.name }}</td>
 
                         <td>{% if item.product.offer_price %}
@@ -44,9 +44,37 @@
                         </td>
 
                         <td>
-                            <a href=""><i class="fas fa-minus me-2"></i></a>
-                            {{ item.quantity }}
-                            <a href=""><i class="fas fa-plus ms-2"></i></a>
+                            <form method="POST" action="">
+                                {% csrf_token %}
+                                <div class="form-group mb-2">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button class="decrement-qty btn btn-sm shop-now-button"
+                                                data-item_id="{{item.item_id }}" id="decrement-qty_{{item.item_id }}">
+                                                <span>
+                                                    <i class="fas fa-sm fa-minus"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <input class="form-control form-control-sm qty_input" type="number" name="quantity" value="{{ item.quantity }}"
+                                            min="1" max="99" data-item_id="{{item.item_id }}"
+                                            id="id_qty_{{item.item_id }}">
+                                        <div class="input-group-append">
+                                            <button class="increment-qty btn btn-sm shop-now-button"
+                                                data-item_id="{{item.item_id }}" id="increment-qty_{{item.item_id }}">
+                                                <span>
+                                                    <i class="fas fa-sm fa-plus"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        {% if item.product.has_sizes %}
+                                            <input type="hidden" name="product_size" value="{{ item.size }}">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </form>
+                            <a class="update-link text-info"><small>Update</small></a>
+                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-size="{{ item.size }}"><small>Remove</small></a>
                         </td>
                         <td>
                             {% if item.product.offer_price  %}
@@ -55,9 +83,6 @@
                             {% else %}
                             £{{ item.sub_total|floatformat:2 }}
                             {% endif %}
-                            <a class="bin" href="">
-                                <i class="fas fa-trash float-end"></i>
-                            </a>
                         </td>
                     </tr>
                     {% empty %}
@@ -70,7 +95,7 @@
                         </td>
                     </tr>
                     {% endfor %}
-                    
+
                     {% if object.get_total %}
                     <tr>
                         <td colspan="4"><b>Order Total</b></td>
@@ -79,8 +104,7 @@
                     <tr>
                         <td colspan="5">
                             <a class='btn add-btn float-end blue ms-2' href='/payment/'>Proceed to checkout</a>
-                            <a class='btn bg-blue yellow float-end continue-btn '
-                                href="">Continue shopping</a>
+                            <a class='btn bg-blue yellow float-end continue-btn ' href="">Continue shopping</a>
                         </td>
                     </tr>
                     {% endif %}
@@ -88,5 +112,32 @@
             </table>
         </div>
     </div>
-</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_input_script.html' %}
+
+<script type="text/javascript">
+    // Update quantity on click
+    $('.update-link').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('size');
+        var url = `/bag/remove/${itemId}`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
 {% endblock %}

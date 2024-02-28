@@ -40,9 +40,17 @@ def bag_contents(request):
             for size, quantity in item_data['items_by_size'].items():
                 total += quantity * product.price
                 product_count += quantity
+                offer_price = product.offer_price
+
+                if offer_price is not None:
+                    sub_total = offer_price * quantity
+                    saving = (product.price * quantity) - (product.offer_price * quantity)
+                else:
+                    sub_total = total
+
                 bag_items.append({
                     'item_id': item_id,
-                    'quantity': item_data,
+                    'quantity': quantity,
                     'product': product,
                     'offer_price': offer_price,
                     'sub_total': sub_total,

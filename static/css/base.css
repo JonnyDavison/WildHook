@@ -60,6 +60,10 @@ a {
     color: white;
 }
 
+.red {
+    color: #a10303;
+}
+
 /* Navbar  */
 .navbar {
     margin-bottom: 1px #DAA520 solid;

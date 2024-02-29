@@ -362,16 +362,33 @@ footer .form-control {
     cursor: pointer;
 }
 /* MESSAGES */
+/* TOASTS  */
+/* message container styling  */
 
 .messages-item-div {
-    justify-content: center;
-    align-content: center;
+    justify-content: end;
+    align-content: end;
+    display: flex;
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
 }
+
 .messages-item-detail {
-    margin: auto;
-    margin-bottom: 0;
-    width: 75%;
+   overflow: visible;
 }
+
+.toast-cap {
+    height: 2px;
+    padding: 0;
+    margin: 0;
+}
+
+
+.messg
+
+
 
 /* ACCOUNT LOGIN/LOGOUT/SIGN-UP */
 
@@ -471,8 +488,6 @@ select option[value=""] {
 .rating > p > i {
     color: #DAA520;
 }
-
-
 
 /* MEDIA QUERIES */
 

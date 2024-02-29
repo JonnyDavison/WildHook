@@ -16,11 +16,16 @@
   <!-- favicon -->
   <link rel="icon" type="image/x-icon" href="/media/favicon/favicon.ico">
   <!-- core js -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-  </script>
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
+  </script>
   <script src="https://kit.fontawesome.com/75b57bf907.js" crossorigin="anonymous"></script>
   <!-- Stripe js -->
   <script src="https://js.stripe.com/v3/"></script>
@@ -121,19 +126,25 @@
       </div>
     </div>
   </div>
-  <div class="messages-item-div bg-blue">
-    {% if messages %}
+  {% if messages %}
+
+  <div aria-live="polite" aria-atomic="true" class="messages-item-div show position-relative">
     {% for message in messages %}
-    <div class="messages-item-detail text-center alert alert-{{ message.tags }} alert-dismissible fade show"
-      role="alert">
-      <i class="fa-solid fa-circle-info"></i> {{ message }}
-      <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    {% endfor %}
+    {% with message.level as level %}
+    {% if level == 40 %}
+    {% include 'includes/toasts/toast_error.html' %}
+    {% elif level == 30 %}
+    {% include 'includes/toasts/toast_warning.html' %}
+    {% elif level == 25 %}
+    {% include 'includes/toasts/toast_success.html' %}
+    {% else %}
+    {% include 'includes/toasts/toast_info.html' %}
     {% endif %}
+    {% endwith %}
+    {% endfor %}
   </div>
+  {% endif %}
+  
   {% block content %}
 
   {% endblock %}
@@ -188,10 +199,14 @@
       </div>
     </div>
   </footer>
+
+  {% block postloadjs %}
+  <script>
+    $(document).ready(function () {
+      $(".toast").toast('show');
+    });
+  </script>
+  {% endblock %}
 </body>
 
 </html>
-
-{% block postloadjs %}
-
-{% endblock %}

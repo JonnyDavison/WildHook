@@ -17,46 +17,80 @@ def bag_contents(request):
     for item_id, item_data in bag.items():
         if isinstance(item_data, int):
             product = get_object_or_404(Product, pk=item_id)
-            total += item_data * product.price
+            price_to_use = product.offer_price if product.offer_price is not None else product.price
+            total += item_data * price_to_use
             product_count += item_data
-            offer_price = product.offer_price
-
-            if offer_price is not None:
-                sub_total = offer_price * item_data
-                saving = (product.price * item_data) - (product.offer_price * item_data)
-            else:
-                sub_total = total
+            saving = (product.price * item_data) - (price_to_use * item_data)
 
             bag_items.append({
                 'item_id': item_id,
                 'quantity': item_data,
                 'product': product,
-                'offer_price': offer_price,
-                'sub_total': sub_total,
+                'offer_price': product.offer_price,
+                'sub_total': item_data * price_to_use,
                 'saving': saving
             })
         else:
             product = get_object_or_404(Product, pk=item_id)
             for size, quantity in item_data['items_by_size'].items():
-                total += quantity * product.price
+                price_to_use = product.offer_price if product.offer_price is not None else product.price
+                total += quantity * price_to_use
                 product_count += quantity
-                offer_price = product.offer_price
-
-                if offer_price is not None:
-                    sub_total = offer_price * quantity
-                    saving = (product.price * quantity) - (product.offer_price * quantity)
-                else:
-                    sub_total = total
+                saving = (product.price * quantity) - (price_to_use * quantity)
 
                 bag_items.append({
                     'item_id': item_id,
                     'quantity': quantity,
                     'product': product,
-                    'offer_price': offer_price,
-                    'sub_total': sub_total,
+                    'offer_price': product.offer_price,
+                    'sub_total': quantity * price_to_use,
                     'saving': saving,
                     'size': size
                 })
+
+    # for item_id, item_data in bag.items():
+    #     if isinstance(item_data, int):
+    #         product = get_object_or_404(Product, pk=item_id)
+    #         total += item_data * product.price
+    #         product_count += item_data
+    #         offer_price = product.offer_price
+
+    #         if offer_price is not None:
+    #             sub_total = offer_price * item_data
+    #             saving = (product.price * item_data) - (product.offer_price * item_data)
+    #         else:
+    #             sub_total = total
+
+    #         bag_items.append({
+    #             'item_id': item_id,
+    #             'quantity': item_data,
+    #             'product': product,
+    #             'offer_price': offer_price,
+    #             'sub_total': sub_total,
+    #             'saving': saving
+    #         })
+    #     else:
+    #         product = get_object_or_404(Product, pk=item_id)
+    #         for size, quantity in item_data['items_by_size'].items():
+    #             total += quantity * product.price
+    #             product_count += quantity
+    #             offer_price = product.offer_price
+
+    #             if offer_price is not None:
+    #                 sub_total = offer_price * quantity
+    #                 saving = (product.price * quantity) - (product.offer_price * quantity)
+    #             else:
+    #                 sub_total = total
+
+    #             bag_items.append({
+    #                 'item_id': item_id,
+    #                 'quantity': quantity,
+    #                 'product': product,
+    #                 'offer_price': offer_price,
+    #                 'sub_total': sub_total,
+    #                 'saving': saving,
+    #                 'size': size
+    #             })
 
     if total < settings.FREE_DELIVERY:
         delivery = total * Decimal(settings.DELIVERY_PERCENTAGE / 100)

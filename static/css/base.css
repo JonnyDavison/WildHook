@@ -372,7 +372,7 @@ footer .form-control {
     position: fixed;
     top: 72px;
     right: 15px;
-    z-index: 99999999999;
+    z-index: 99999;
 }
 
 .messages-item-detail {
@@ -385,9 +385,11 @@ footer .form-control {
     margin: 0;
 }
 
-
-.messg
-
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
 
 
 /* ACCOUNT LOGIN/LOGOUT/SIGN-UP */

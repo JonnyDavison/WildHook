@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'home',
     'products',
     'bag',
+    'checkout',
 
 
     'shop',
@@ -179,5 +180,5 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 CSRF_TRUSTED_ORIGINS = ['https://8000-jonnydavison-wildhook-9pxva2zv1o4.ws-eu108.gitpod.io','https://wildhook-72f0fa2bfc47.herokuapp.com']
 
 
-FREE_DELIVERY = 250
+FREE_DELIVERY = 750
 DELIVERY_PERCENTAGE = 10

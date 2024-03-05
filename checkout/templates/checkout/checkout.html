@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load bag_tools %}
+{% load crispy_forms_tags %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
@@ -20,7 +21,7 @@
 
 
 <div class="row">
-    <div class="col-12 col-lg-6 order-lg-last mb-5">
+    <div class="col-12 col-lg-5 order-lg-last pe-1 mb-5">
         <p class="text-muted">Order Summary ({{ product_count }})</p>
         <div class="row">
             <div class="col-7 offset-2">
@@ -34,8 +35,8 @@
         <div class="row">
             <div class="col-2 mb-1">
                 <a href="{% url 'product_detail' item.product.id %}">
-                    {% if product.image %}
-                        <img class="w-100" src="/media/webimages/{{ product.image }}" alt="{{ product.name }}">
+                    {% if item.product.image %}
+                        <img class="w-100" src="/media/webimages/{{ item.product.image }}" alt="{{ item.product.name }}">
                     {% else %}
                         <img class="w-100" src="/media/webimages/default-img.webp" alt="{{ product.name }}">
                     {% endif %}
@@ -46,9 +47,16 @@
                 <p class="my-0 small">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
                 <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
             </div>
+            {% if item.product.offer_price  %}
+            <div class="col-3 text-end">
+                <p class="my-0 small text-muted">${{ item.product.offer_price | calc_subtotal:item.quantity }}</p>
+                <span class="badge blue">Saving £{{ item.saving }}!</span>
+            </div>
+            {% else %}
             <div class="col-3 text-end">
                 <p class="my-0 small text-muted">${{ item.product.price | calc_subtotal:item.quantity }}</p>
             </div>
+            {% endif %}
         </div>
     {% endfor %}
     <hr class="my-0">
@@ -65,8 +73,8 @@
         </div>
     </div>
 </div>
-    
-    <div class="col-12 col-lg-6 blue">
+<!-- col-lg-6 blue -->
+    <div class="col-12  col-lg-5 offset-lg-1">
         <p class="text-muted">Please fill out the form, to complete your order.</p>
         <form action="{% url 'checkout' %}" method="POST" id="payment-form">
             {% csrf_token %}
@@ -107,7 +115,7 @@
                 <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
             </fieldset>
             <div class="submit-button text-end mt-5 mb-2">
-                <a href="{% url 'bag' %}" class="btn btn-outline-black">
+                <a href="{% url 'bag' %}" class="btn bg-blue yellow continue-btn">
                     <span class="icon">
                         <i class="fas fa-chevron-left"></i>
                     </span>

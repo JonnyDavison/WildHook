@@ -180,6 +180,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 CSRF_TRUSTED_ORIGINS = ['https://8000-jonnydavison-wildhook-9pxva2zv1o4.ws-eu108.gitpod.io','https://wildhook-72f0fa2bfc47.herokuapp.com']
 
-
+STRIPE_CURRENCY = 'gbp'
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 FREE_DELIVERY = 750
 DELIVERY_PERCENTAGE = 10

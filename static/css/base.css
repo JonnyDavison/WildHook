@@ -61,7 +61,7 @@ a {
 }
 
 .red {
-    color: #a10303;
+    color: #a10303 !important;
 }
 
 /* Navbar  */

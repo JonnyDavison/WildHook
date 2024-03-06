@@ -36,15 +36,16 @@
             <div class="col-2 mb-1">
                 <a href="{% url 'product_detail' item.product.id %}">
                     {% if item.product.image %}
-                        <img class="w-100" src="/media/webimages/{{ item.product.image }}" alt="{{ item.product.name }}">
+                    <img class="w-100" src="/media/webimages/{{ item.product.image }}" alt="{{ item.product.name }}">
                     {% else %}
-                        <img class="w-100" src="/media/webimages/default-img.webp" alt="{{ product.name }}">
+                    <img class="w-100" src="/media/webimages/default-img.webp" alt="{{ product.name }}">
                     {% endif %}
                 </a>
             </div>
             <div class="col-7">
                 <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                <p class="my-0 small">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+                <p class="my-0 small">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}
+                </p>
                 <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
             </div>
             {% if item.product.offer_price  %}
@@ -58,25 +59,25 @@
             </div>
             {% endif %}
         </div>
-    {% endfor %}
-    <hr class="my-0">
-    <div class="row text-end">
-        <div class="col-7 offset-2">
-            <p class="my-0">Order Total:</p>
-            <p class="my-0">Delivery:</p>
-            <p class="my-0">Grand Total:</p>
-        </div>
-        <div class="col-3">
-            <p class="my-0">${{ total | floatformat:2 }}</p>
-            <p class="my-0">${{ delivery | floatformat:2 }}</p>
-            <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
+        {% endfor %}
+        <hr class="my-0">
+        <div class="row text-end">
+            <div class="col-7 offset-2">
+                <p class="my-0">Order Total:</p>
+                <p class="my-0">Delivery:</p>
+                <p class="my-0">Grand Total:</p>
+            </div>
+            <div class="col-3">
+                <p class="my-0">${{ total | floatformat:2 }}</p>
+                <p class="my-0">${{ delivery | floatformat:2 }}</p>
+                <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
+            </div>
         </div>
     </div>
-</div>
-<!-- col-lg-6 blue -->
+    <!-- col-lg-6 blue -->
     <div class="col-12  col-lg-5 offset-lg-1">
         <p class="text-muted">Please fill out the form, to complete your order.</p>
-        <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+        <form action="{% url 'checkout' %}" method="POST" id="payment-form" data-secret="{{ client_secret }}">
             {% csrf_token %}
             <fieldset class="px-3 mb-5">
                 <legend class="fieldset-label small px-2 w-auto">Details</legend>
@@ -106,13 +107,14 @@
                     {% endif %}
                 </div>
             </fieldset>
-            <fieldset class="px-3 mb-5">
+            <fieldset class="px-3 payment-form mb-5">
                 <legend class="fieldset-label small px-2 w-auto">Payment</legend>
                 <!-- A Stripe card element will go here -->
                 <div class="mb-3" id="card-element"></div>
 
                 <!-- Used to display form errors -->
-                <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                <div class="mb-3 red" id="card-errors" role="alert"></div>
+
             </fieldset>
             <div class="submit-button text-end mt-5 mb-2">
                 <a href="{% url 'bag' %}" class="btn bg-blue yellow continue-btn">
@@ -138,4 +140,11 @@
     </div>
 </div>
 
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}

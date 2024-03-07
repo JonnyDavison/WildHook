@@ -144,18 +144,6 @@ a {
     margin: 0;
 }
 
-.shop-now-button {
-    border: 1px solid #0D3D6D !important;
-    margin-top: 0.2rem !important;
-    margin-bottom: 0.2rem !important;
-    background-color: #DAA520 !important;
-}
-
-.shop-now-button:hover {
-    border: 1px solid #fff !important;
-    color: #fff !important;
-    background-color: #0D3D6D !important;
-}
 
 /* Promotion Section Home Page */
 
@@ -299,6 +287,20 @@ footer .form-control {
 }
 
 /* BUTTONS  */
+
+.shop-now-button {
+    border: 1px solid #0D3D6D !important;
+    margin-top: 0.2rem !important;
+    margin-bottom: 0.2rem !important;
+    background-color: #DAA520 !important;
+}
+
+.shop-now-button:hover {
+    border: 1px solid #fff !important;
+    color: #fff !important;
+    background-color: #0D3D6D !important;
+}
+
 
 .add-btn {
     border: 1px solid #0D3D6D;

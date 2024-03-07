@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="w-100 ">
+    <div class="row">
+        <div class="col-12">
+            <div class="">
+                <h1 class="page-banner white">Thank you!</h1>
+                <hr>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12 col-lg-7">
+        <p>Your Order information is below. A confirmation email is on the way to
+            <strong>{{ order.email }}</strong></p>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-lg-8 offset-2 text-center">
+
+        <div>Catch our Newest Arrivals and bag your self a big one!</div>
+        <a href="{% url 'products' %}?category=new_arrivals" class="btn shop-now-button my-2">
+            <span class="icon mr-2">
+                Catch now! <i class="fa-solid fa-fish"></i>
+            </span>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

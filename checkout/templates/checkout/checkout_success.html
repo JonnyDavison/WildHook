@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load bag_tools %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
@@ -21,14 +22,14 @@
 
 
 <div class="row">
-    <div class="col-12 col-lg-8 offset-2">
-        <p>Your Order information is below. A confirmation email is on the way to
+    <div class="col-12 col-lg-8 offset-lg-2">
+        <p class="text-center">Your Order information is below. A confirmation email is on the way to
             <strong>{{ order.email }}</strong>
         </p>
     </div>
 </div>
 <div class="row">
-    <div class="col-12 col-lg-8 offset-2">
+    <div class="col-12 col-lg-8 offset-lg-2">
         <div class="order-confirmation-wrapper p-2 border">
             <div class="row">
                 <div class="col">
@@ -69,19 +70,19 @@
                     </p>
                 </div>
                 <div class="col-12 col-md-8 text-md-end">
-                    {% if item.product.offer_price  %}
-                    <p class="small mb-0 font-weight-bold">${{ item.product.offer_price | calc_subtotal:item.quantity }}
-                    </p>
-                    <span class="badge blue">Saving £{{ item.saving }}!</span>
+                        {% if item.product.offer_price  %}
+                        
+                            <p class="small mb-0 text-md-end">{{ item.quantity }} @ ${{ item.product.offer_price }} each</p>
+                       
+                        {% else %}
+                   
+                            <p class="small mb-0 text-md-end">{{ item.quantity }} @ ${{ item.product.price }} each</p>
+               
+                        {% endif %}
                 </div>
-                {% else %}
-                <p class="small mb-0 font-weight-bold">${{ item.product.price | calc_subtotal:item.quantity }}</p>
-                {% endif %}
-            </div>
-        
-        {% endfor %}
-    </div>
-        <div class="order-confirmation-wrapper p-2 border">
+            {% endfor %}
+        </div>
+        <div class=" p-2 border">
             <div class="row">
                 <div class="col">
                     <small class="text-muted">Delivering To:</small>
@@ -166,7 +167,7 @@
                 </div>
             </div>
         </div>
-        <div class="order-confirmation-wrapper p-2 border">
+        <div class=" p-2 border">
             <div class="row">
                 <div class="col">
                     <small class="text-muted">Billing Info:</small>
@@ -202,19 +203,19 @@
         </div>
     </div>
 </div>
-    <div class="col-12 col-lg-8 offset-2 text-center">
+<div class="col-12 col-lg-8 offset-lg-2 text-center">
 
-        <div>
-            <h4>
-                Catch our Newest Arrivals and land your self the big one!
-            </h4>
-        </div>
-        <a href="{% url 'products' %}?category=new_arrivals" class="btn shop-now-button my-2">
-            <span class="icon mr-2">
-                Catch now! <i class="fa-solid fa-fish"></i>
-            </span>
-        </a>
+    <div>
+        <h4>
+            Catch our Newest Arrivals and land your self the big one!
+        </h4>
     </div>
+    <a href="{% url 'products' %}?category=new_arrivals" class="btn shop-now-button my-2">
+        <span class="icon mr-2">
+            Catch now! <i class="fa-solid fa-fish"></i>
+        </span>
+    </a>
+</div>
 </div>
 
 {% endblock %}

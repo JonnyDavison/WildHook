@@ -64,17 +64,22 @@ class OrderLineItem(models.Model):
     product_size = models.CharField(max_length=2, null=True,
                                     blank=True) # String of hook sizes ordered
     quantity = models.IntegerField(null=False, blank=False, default=0)
-    lineitem_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, blank=False, editable=False)
+    lineitem_total = models.DecimalField(max_digits=10,
+                                         decimal_places=2, null=False, blank=False, editable=False)
 
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the lineitem total
         and update the order total.
         """
-        if not self.lineitem_total:
-            price_to_use = self.product.offer_price if self.product.offer_price is not None else self.product.price
-            self.lineitem_total = price_to_use * self.quantity
-            super().save(*args, **kwargs)
+        
+        if self.product.offer_price is not None:
+            price_to_use = self.product.offer_price
+        else:
+            price_to_use = self.product.price
+
+        self.lineitem_total = price_to_use * self.quantity
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f'SKU {self.product.sku} on order {self.order.order_number}'

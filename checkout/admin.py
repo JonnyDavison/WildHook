@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Order, OrderLineItem
-
+from django.contrib.admin.models import LogEntry
 
 class OrderLineItemAdminInline(admin.TabularInline):
     """ OrderlineItem registration """
@@ -27,5 +27,15 @@ class OrderAdmin(admin.ModelAdmin):
                     'grand_total',)
 
     ordering = ('-date',)
+
+
+@admin.register(LogEntry)
+class LogEntryAdmin(admin.ModelAdmin):
+    """ Allow logs to be visible in the admin panel for testing """
+    list_display = ['action_time', 'user', 'content_type',
+                    'object_id', 'object_repr', 'action_flag', 'change_message']
+    list_filter = ['action_time', 'user']
+    search_fields = ['user__username', 'change_message']
+
 
 admin.site.register(Order, OrderAdmin)

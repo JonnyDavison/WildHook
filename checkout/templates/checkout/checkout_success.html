@@ -78,8 +78,9 @@
                 <p class="small mb-0 font-weight-bold">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                 {% endif %}
             </div>
-        </div>
+        
         {% endfor %}
+    </div>
         <div class="order-confirmation-wrapper p-2 border">
             <div class="row">
                 <div class="col">
@@ -201,19 +202,19 @@
         </div>
     </div>
 </div>
-<div class="col-12 col-lg-8 offset-2 text-center">
+    <div class="col-12 col-lg-8 offset-2 text-center">
 
-    <div>
-        <h4>
-            Catch our Newest Arrivals and land your self the big one!
-        </h4>
+        <div>
+            <h4>
+                Catch our Newest Arrivals and land your self the big one!
+            </h4>
+        </div>
+        <a href="{% url 'products' %}?category=new_arrivals" class="btn shop-now-button my-2">
+            <span class="icon mr-2">
+                Catch now! <i class="fa-solid fa-fish"></i>
+            </span>
+        </a>
     </div>
-    <a href="{% url 'products' %}?category=new_arrivals" class="btn shop-now-button my-2">
-        <span class="icon mr-2">
-            Catch now! <i class="fa-solid fa-fish"></i>
-        </span>
-    </a>
-</div>
 </div>
 
 {% endblock %}

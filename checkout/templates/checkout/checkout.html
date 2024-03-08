@@ -114,7 +114,7 @@
 
                 <!-- Used to display form errors -->
                 <div class="mb-3 red" id="card-errors" role="alert"></div>
-
+                <input type="hidden" name="client_secret" value="{{ client_secret }}>
             </fieldset>
             <div class="submit-button text-end mt-5 mb-2">
                 <a href="{% url 'bag' %}" class="btn bg-blue yellow continue-btn">
@@ -142,7 +142,7 @@
 <div id="loading-overlay">
     <h1 class="text-light logo-font loading-spinner">
         <span>
-            <i class="fas fa-3x fa-aunc-alt fa-spin"></i>
+            <i class="fa-solid fa-spinner fa-3x fa-spin-pulse"></i>
         </span>
     </h1>
 </div>

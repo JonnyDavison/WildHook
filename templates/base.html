@@ -55,7 +55,7 @@
               Shop
             </a>
             <ul class="dropdown-menu bg-yellow">
-              <li><a class="dropdown-item blue" href="{% url 'products' %}">Shop</a></li>
+              <li><a class="dropdown-item blue" href="{% url 'products' %}">All</a></li>
               <li><a class="dropdown-item blue" href="{% url 'products' %}?category=new_arrivals">New Arrivals</a></li>
               <li><a class="dropdown-item blue" href="{% url 'products' %}?category=rods">Rods</a></li>
               <li><a class="dropdown-item blue" href="{% url 'products' %}?category=reels">Reels</a></li>
@@ -66,7 +66,7 @@
           </li>
         </ul>
 
-        <form class="d-flex" method="GET" action="{% url 'products' %}" role="search">
+        <form class="d-flex d-sm-end d-none d-sm-flex" method="GET" action="{% url 'products' %}" role="search">
           <input class="form-control me-2" name="q" placeholder="Search" aria-label="Search">
           <button class="btn blue" type="submit"><i class="fas fa-search"></i></button>
         </form>
@@ -74,7 +74,7 @@
         <ul class="navbar-nav nav-flex-icons">
           {% if request.user.is_authenticated %}
           <li class="nav-item">
-            <a href="{% url 'bag' %}" class="nav-link blue waves-effect">
+            <a href="{% url 'bag' %}" class="nav-link blue">
               <span class="badge z-depth-1 mr-1 bg-yellow blue">
                 {% if product_count %}
                 {{ product_count }}
@@ -83,23 +83,23 @@
                 {% endif %}
               </span>
               <i class="bi bi-cart3"></i>
-              <span class="clearfix d-none d-sm-inline-block"> Cart</span>
+              <span class="clearfix  d-sm-inline-block"> Cart</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link blue waves-effect" href="{% url 'account_logout' %}">
-              <span class="clearfix d-none d-sm-inline-block"> Logout </span>
+            <a class="nav-link blue" href="{% url 'account_logout' %}">
+              <span class="clearfix  d-sm-inline-block"> Logout </span>
             </a>
           </li>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link waves-effect blue" href="{% url 'account_login' %}">
-              <span class="clearfix d-none d-sm-inline-block"> Login </span>
+            <a class="nav-link blue" href="{% url 'account_login' %}">
+              <span class="clearfix  d-sm-inline-block"> Login </span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-effect blue" href="{% url 'account_signup' %}">
-              <span class="clearfix d-none d-sm-inline-block"> Signup </span>
+            <a class="nav-link blue" href="{% url 'account_signup' %}">
+              <span class="clearfix  d-sm-inline-block"> Signup </span>
             </a>
           </li>
           {% endif %}

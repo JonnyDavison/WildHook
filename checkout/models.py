@@ -4,11 +4,14 @@ from django.db.models import Sum
 from django.conf import settings
 from django_countries.fields import CountryField
 from products.models import Product
+from profiles.models import UserProfile
 
 
 class Order(models.Model):
     """ Model to hold customer delivery information """
     order_number = models.CharField(max_length=32, null=False, editable=False)
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
+                                     null=True, blank=True, related_name='orders')
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
@@ -74,7 +77,7 @@ class OrderLineItem(models.Model):
         Override the original save method to set the lineitem total
         and update the order total.
         """
-        
+
         if self.product.offer_price is not None:
             price_to_use = self.product.offer_price
         else:

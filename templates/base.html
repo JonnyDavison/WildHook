@@ -74,6 +74,11 @@
         <ul class="navbar-nav nav-flex-icons">
           {% if request.user.is_authenticated %}
           <li class="nav-item">
+            <a class="nav-link blue" href="{% url 'profile' %}">
+              <span class="clearfix d-sm-inline-block"> My Profile </span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{% url 'bag' %}" class="nav-link blue">
               <span class="badge z-depth-1 mr-1 bg-yellow blue">
                 {% if product_count %}
@@ -88,18 +93,18 @@
           </li>
           <li class="nav-item">
             <a class="nav-link blue" href="{% url 'account_logout' %}">
-              <span class="clearfix  d-sm-inline-block"> Logout </span>
+              <span class="clearfix d-sm-inline-block"> Logout </span>
             </a>
           </li>
           {% else %}
           <li class="nav-item">
             <a class="nav-link blue" href="{% url 'account_login' %}">
-              <span class="clearfix  d-sm-inline-block"> Login </span>
+              <span class="clearfix d-sm-inline-block"> Login </span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link blue" href="{% url 'account_signup' %}">
-              <span class="clearfix  d-sm-inline-block"> Signup </span>
+              <span class="clearfix d-sm-inline-block"> Signup </span>
             </a>
           </li>
           {% endif %}
@@ -146,7 +151,7 @@
     {% endfor %}
   </div>
   {% endif %}
-  
+
   {% block content %}
 
   {% endblock %}

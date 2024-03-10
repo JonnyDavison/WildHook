@@ -78,6 +78,13 @@
               <span class="clearfix d-sm-inline-block"> My Profile </span>
             </a>
           </li>
+            {% if request.user.is_superuser %}
+              <li class="nav-item">
+                <a class="nav-link blue" href="{% url 'add_product' %}">
+                  <span class="clearfix d-sm-inline-block">Admin</span>
+                </a>
+              </li>
+            {% endif %}
           <li class="nav-item">
             <a href="{% url 'bag' %}" class="nav-link blue">
               <span class="badge z-depth-1 mr-1 bg-yellow blue">

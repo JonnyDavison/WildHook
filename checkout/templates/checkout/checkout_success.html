@@ -8,13 +8,12 @@
 
 
 {% block content %}
-<div class="w-100 ">
+<div class="w-100">
     <div class="row">
         <div class="col-12">
             <div class="">
                 <h1 class="page-banner white">Thank you!</h1>
-                <hr>
-
+                <br>
             </div>
         </div>
     </div>
@@ -48,7 +47,7 @@
 
             <div class="row">
                 <div class="col-12 col-md-4">
-                    <p class="mb-0  font-weight-bold">Order Date</p>
+                    <p class="mb-0 font-weight-bold">Order Date</p>
                 </div>
                 <div class="col-12 col-md-8 text-md-end">
                     <p class="mb-0">{{ order.date }}</p>
@@ -111,7 +110,7 @@
                         <p class="mb-0  font-weight-bold">Address 2</p>
                     </div>
                     <div class="col-12 col-md-8 text-md-end">
-                        <p class="mb-0">{{ order.street_address1 }}</p>
+                        <p class="mb-0">{{ order.street_address2 }}</p>
                     </div>
                 </div>
                 {% endif %}
@@ -197,20 +196,34 @@
             </div>
         </div>
     </div>
-
+</div>
+</div>
+<div class="row">
     <div class="col-12 col-lg-8 offset-lg-2 text-center">
-
+        {% if from_profile %}
+        <div>
+            <h4>
+                Return to your Profile.
+            </h4>
+        </div>
+        <a href="{% url 'profile' %}" class="btn shop-now-button blue">
+            <span class="icon mr-2">
+                <i class="fas fa-angle-left"></i>
+            </span>
+            <span class="text-uppercase">Profile</span>
+        </a>
+        {% else %}
         <div>
             <h4>
                 Catch our Newest Arrivals and land your self the big one!
             </h4>
         </div>
-        <a href="{% url 'products' %}?category=new_arrivals" class="btn shop-now-button my-2">
+        <a href="{% url 'products' %}?category=new_arrivals" class="btn shop-now-button blue">
             <span class="icon mr-2">
                 Catch now! <i class="fa-solid fa-fish"></i>
             </span>
         </a>
+        {% endif %}
     </div>
 </div>
-
 {% endblock %}

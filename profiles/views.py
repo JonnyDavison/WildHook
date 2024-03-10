@@ -32,7 +32,8 @@ def profile(request):
 def order_history(request, order_number):
     """Display order history"""
     order = get_object_or_404(Order, order_number=order_number)
-    messages.info(request (
+
+    messages.info(request, (
         f'Past confirmation Order Number {order_number}.'
         'A confirmation email was sent at the time of ordering.'
     ))

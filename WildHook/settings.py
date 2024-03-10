@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    
+
     'crispy_forms',
     'django_countries',
 
@@ -191,7 +191,7 @@ DELIVERY_PERCENTAGE = 10
 
 # if 'DEVELOPMENT' in os.environ:
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-DEFAULT_FROM_EMAIL = 'boutiqueado@example.com'
+DEFAULT_FROM_EMAIL = 'orders@wildhook.com'
 # else:
 #     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 #     EMAIL_USE_TLS = True

@@ -51,6 +51,12 @@
                             </div>
                         </h5>
                         <p class="card-text">{{ product.description }}</p>
+                        {% if request.user.is_superuser %}
+                            <small class="ml-3 text-end">
+                                <a href="{% url 'edit_product' product.id %}">Edit</a>
+                                <a class="red " href="{% url 'delete_product' product.id %}">Delete</a>
+                            </small>
+                        {% endif %}
                     </div>
                 </div>
             </div>

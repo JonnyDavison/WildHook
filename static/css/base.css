@@ -329,7 +329,7 @@ footer .form-control {
 }
 
 .bin {
-    color: red;
+    color: #a10303;
 }
 
 .top-button {
@@ -515,6 +515,33 @@ select option[value=""] {
     margin: 0;
     height: 100%;
 }
+
+/* PRODUCT FORM  */
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-check.custom-checkbox .custom-control-label::before {
+    border-radius: 0;
+    border-color: #a10303;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #a10303;
+    border-color: #a10303;
+    border-radius: 0;
+}
+
 
 
 /* MEDIA QUERIES */

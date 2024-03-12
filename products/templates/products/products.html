@@ -22,9 +22,9 @@
                 <div class="card h-100">
                     <a href="{% url 'product_detail' product.id %}" class="ratio ratio-4x3">
                         {% if product.image %}
-                        <img src="/media/webimages/{{ product.image }}" class="card-img-top" alt="{{ item.name }}">
+                        <img src="{{ MEDIA_URL }}{{ product.image }}" class="card-img-top" alt="{{ item.name }}">
                         {% else %}
-                        <img src="/media/webimages/default-img.webp" class="card-img-top"
+                        <img src="{{ MEDIA_URL }}default-img.webp" class="card-img-top"
                             alt="No image available for Product">
                         {% endif %}
                     </a>

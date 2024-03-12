@@ -547,11 +547,16 @@
                                             <span class="icon">
                                                 <i class="fas fa-chevron-left"></i>
                                             </span>
-                                            <span class="text-uppercase">Keep Shopping</span>
+                                            <span class="blue">Shop</span>
                                         </a>
-                                        <input type="submit" class="btn shop-now-button text-uppercase mt-5"
+                                        <input type="submit" class="btn shop-now-button blue mt-5"
                                             value="Add to Bag">
+                                        <a href="{% url 'bag' %}" class="d-md-none blue shop-now-button btn">
+                                        <i class="bi bi-cart3"></i>
+                                        <span class="clearfix  d-sm-inline-block"> Checkout</span>
+                                      </a>
                                     </div>
+                                    
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                     {% endwith %}
                                 </div>

@@ -559,6 +559,14 @@ select option[value=""] {
     max-height: 300px;
 }
 
+
+/* REVIEWS  */
+.review-card {
+    width: 18rem;
+    display:inline-block;
+}
+
+
 /* MEDIA QUERIES */
 
 /* // Small devices (landscape phones, 375px and down) */

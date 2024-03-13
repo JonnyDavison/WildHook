@@ -1,0 +1,4 @@
+User-agent:*
+Disallow: /accounts/
+Disallow: /bag/
+Sitemap: https://wildhook-72f0fa2bfc47.herokuapp.com/sitemap.xml

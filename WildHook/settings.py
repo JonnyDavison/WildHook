@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 # DEBUG = True
 
-ALLOWED_HOSTS = ['8000-jonnydavison-wildhook-9pxva2zv1o4.ws-eu108.gitpod.io', 'wildhook-72f0fa2bfc47.herokuapp.com']
+ALLOWED_HOSTS = ['8000-jonnydavison-wildhook-9pxva2zv1o4.ws-eu109.gitpod.io', 'wildhook-72f0fa2bfc47.herokuapp.com']
 
 # Application definition
 
@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'bag',
     'checkout',
     'profiles',
+    'blog',
 
 
     'shop',

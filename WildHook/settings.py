@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 # DEBUG = True
 
-ALLOWED_HOSTS = ['8000-jonnydavison-wildhook-9pxva2zv1o4.ws-eu109.gitpod.io', 'wildhook-72f0fa2bfc47.herokuapp.com']
+ALLOWED_HOSTS = ['8000-jonnydavison-wildhook-9pxva2zv1o4.ws-eu110.gitpod.io', 'wildhook-72f0fa2bfc47.herokuapp.com']
 
 # Application definition
 
@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
     'blog',
+    'reviews',
 
 
     'shop',
@@ -206,7 +207,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CRISPY FORMS
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-CSRF_TRUSTED_ORIGINS = ['https://8000-jonnydavison-wildhook-9pxva2zv1o4.ws-eu109.gitpod.io','https://wildhook-72f0fa2bfc47.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://8000-jonnydavison-wildhook-9pxva2zv1o4.ws-eu110.gitpod.io','https://wildhook-72f0fa2bfc47.herokuapp.com']
 
 STRIPE_CURRENCY = 'gbp'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')

@@ -549,14 +549,13 @@
                                             </span>
                                             <span class="blue">Shop</span>
                                         </a>
-                                        <input type="submit" class="btn shop-now-button blue mt-5"
-                                            value="Add to Bag">
+                                        <input type="submit" class="btn shop-now-button blue mt-5" value="Add to Bag">
                                         <a href="{% url 'bag' %}" class="d-md-none blue shop-now-button btn">
-                                        <i class="bi bi-cart3"></i>
-                                        <span class="clearfix  d-sm-inline-block"> Checkout</span>
-                                      </a>
+                                            <i class="bi bi-cart3"></i>
+                                            <span class="clearfix  d-sm-inline-block"> Checkout</span>
+                                        </a>
                                     </div>
-                                    
+
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                     {% endwith %}
                                 </div>
@@ -568,13 +567,31 @@
                                 {% endif %}
                         </form>
 
-                    </h6>
+
                 </div>
             </div>
         </div>
-    </div>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2 pb-5 mb-5">
+                <h6>Reviews:</h6>
+                {% if product.reviews.all %}
+                {% for review in product.reviews.all %}
+                <div>
+                    <p>{{ review.user.username }} - Rating: {{ review.rating }}</p>
+                    <p>{{ review.comment }}</p>
+                </div>
+                {% endfor %}
+                {% else %}
+                <p>No reviews yet.</p>
+                {% endif %}
 
-</div>
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'add_review' product.id %}" class="mb-5 pb-5 shop-now-button">Add Review</a>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
 </div>
 </div>
 

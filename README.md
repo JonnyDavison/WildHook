@@ -10,6 +10,7 @@ WildHook was born from a love for fishing and a deep appreciation for the wild, 
 
 ## Table of contents
   * [Overview](#overview)
+    + [Business Model](#business-model)
   * [UX](#ux)
     + [Brand Guidelines](#brand-guidelines)
     + [Scope](#scope)
@@ -45,6 +46,50 @@ WildHook is an ambitious online platform dedicated to passionate fishing enthusi
 In order to achieve this WildHook has been developed using Python (Django), HTML, CSS and JavaScript PostgreSQL database.
 <br><br>
 The deployed project can be accessed at [here]().<br><br>
+
+### Business Model
+**Business Model Overview:**
+WildHook is a B2C-focused e-commerce platform specialising in fishing gear and accessories, catering to fishing enthusiasts in Ireland and the UK. Our mission is to provide a seamless online shopping experience, offering high-quality products, expert advice, and a thriving community hub for anglers of all skill levels.
+
+**Core Business Intents:**
+
+- **Product Excellence:**
+   - Source and curate a diverse range of fishing gear, including rods, reels, lures, tackle boxes, and accessories, from reputable brands known for their quality and performance.
+
+- **Customer-Centric Approach:**
+   - Prioritise customer satisfaction by offering exceptional customer service, personalised recommendations, and hassle-free returns to build long-term loyalty and trust.
+
+- **Community Engagement:**
+   - Foster a vibrant online community where fishing enthusiasts can connect, share experiences, exchange tips, and participate in forum discussions, creating a sense of belonging and camaraderie.
+
+- **Educational Resources:**
+   - Provide a comprehensive library of fishing guides, tutorials, tips, and articles to empower customers with knowledge and enhance their fishing skills and experiences.
+
+- **Mobile Accessibility:**
+   - Optimise the website for mobile devices, ensuring accessibility and seamless functionality across various platforms to accommodate the mobile-centric behaviour of modern consumers.
+
+**Marketing Strategies:**
+
+- **Content Marketing:**
+   - Develop high-quality content such as blog posts, videos, and social media posts focused on fishing tips, techniques, and product reviews to attract and engage the target audience.
+
+- **Social Media Engagement:**
+   - Leverage social media platforms like Instagram, Facebook, and YouTube to showcase products, share user-generated content, run promotions, and interact with the community.
+
+- **Email Marketing:**
+   - Implement targeted email campaigns to deliver personalised product recommendations, exclusive offers, and educational content to subscribers, nurturing relationships and driving sales.
+
+- **Search Engine Optimisation (SEO):**
+   - Optimise website content, product listings, and metadata to improve visibility on search engines, driving organic traffic and attracting potential customers actively searching for fishing gear.
+
+- **Partnerships and Influencer Collaborations:**
+   - Collaborate with industry influencers, fishing experts, and relevant brands to reach new audiences, gain credibility, and amplify brand awareness through endorsements and sponsored content.
+
+- **Referral Programs:**
+   - Implement referral programmes offering incentives for customers to refer friends and family, encouraging word-of-mouth marketing and expanding the customer base organically.
+
+- **Promotions and Discounts:**
+   - Run seasonal promotions, discounts, and loyalty rewards programmes to incentivise repeat purchases, increase customer retention, and stimulate sales during peak fishing seasons.
 
 
 ## User Stories 

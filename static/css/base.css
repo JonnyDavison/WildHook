@@ -316,6 +316,7 @@ footer .form-control {
     background-color: #0D3D6D;
 
 }
+
 .continue-btn {
     border: 1px solid #0D3D6D;
     margin-top: 0.2rem;
@@ -344,11 +345,11 @@ footer .form-control {
     z-index: 1000;
 }
 
-.top-button > a > i {
+.top-button>a>i {
     color: #DAA520;
 }
 
-.top-button > a > i:hover {
+.top-button>a>i:hover {
     color: #0D3D6D;
 }
 
@@ -363,6 +364,7 @@ footer .form-control {
 .remove-item {
     cursor: pointer;
 }
+
 /* MESSAGES */
 /* TOASTS  */
 /* message container styling  */
@@ -378,7 +380,7 @@ footer .form-control {
 }
 
 .messages-item-detail {
-   overflow: visible;
+    overflow: visible;
 }
 
 .toast-cap {
@@ -415,25 +417,25 @@ footer .form-control {
 
 .StripeElement,
 .WH-stripe {
-  box-sizing: border-box;
-  height: 40px;
-  padding: 10px 12px;
-  border: 1px solid transparent;
-  border-radius: 0px;
-  background-color: white;
-  box-shadow: 0 1px 3px 0 #e6ebf1;
-  -webkit-transition: box-shadow 150ms ease;
-  transition: box-shadow 150ms ease;
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    border-radius: 0px;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
 }
 
 .StripeElement--focus,
 .WH-stripe:focus,
 .WH-stripe:active {
-  box-shadow: 0 1px 3px 0 #cfd7df;
+    box-shadow: 0 1px 3px 0 #cfd7df;
 }
 
 .StripeElement--webkit-autofill {
-  background-color: #fefde5 !important;
+    background-color: #fefde5 !important;
 }
 
 .WH-stripe::placeholder {
@@ -453,17 +455,17 @@ footer .form-control {
 
 select,
 select option {
-  color: #0D3D6D;
+    color: #0D3D6D;
 }
 
 select:invalid,
 select option[value=""] {
-  color: #aab7c4 !important;
+    color: #aab7c4 !important;
 }
 
 #loading-overlay {
-	display: none;
-	position: fixed;
+    display: none;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -473,7 +475,7 @@ select option[value=""] {
 }
 
 .loading-spinner {
-	display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     margin: 0;
@@ -489,7 +491,7 @@ select option[value=""] {
     color: slategray;
 }
 
-.rating > p > i {
+.rating>p>i {
     color: #DAA520;
 }
 
@@ -510,7 +512,7 @@ select option[value=""] {
 
 .loading-spinner {
     display: flex;
-    align-items:  center;
+    align-items: center;
     justify-content: center;
     margin: 0;
     height: 100%;
@@ -521,6 +523,7 @@ select option[value=""] {
     position: relative;
     overflow: hidden;
 }
+
 .btn-file input[type="file"] {
     position: absolute;
     top: 0;
@@ -546,17 +549,15 @@ select option[value=""] {
 
 
 #mc_embed_signup {
-    background:#0D3D6D;
-    clear:left; 
-    font:14px Helvetica,Arial,sans-serif; 
+    background: #0D3D6D;
+    clear: left;
+    font: 14px Helvetica, Arial, sans-serif;
     width: px;
 }
 
 .mailchimp {
     max-height: 300px;
 }
-
-
 
 /* MEDIA QUERIES */
 
@@ -570,12 +571,13 @@ select option[value=""] {
     .bag-table {
         font-size: 1rem !important;
     }
-    
-    .bag-table > tbody > tr > td {
+
+    .bag-table>tbody>tr>td {
         padding-left: 4px;
         padding-right: 4px;
     }
 }
+
 
 /* // Small devices (landscape phones, 576px and down) */
 @media (max-width: 576px) {
@@ -587,8 +589,8 @@ select option[value=""] {
     .bag-table {
         font-size: 1rem !important;
     }
-    
-    .bag-table > tbody > tr > td {
+
+    .bag-table>tbody>tr>td {
         padding-left: 4px;
         padding-right: 4px;
     }
@@ -597,7 +599,7 @@ select option[value=""] {
 /* // Small devices (landscape phones, 768px and down) */
 
 @media (max-width: 768px) {
-   
+
     body {
         margin-bottom: 500px;
     }
@@ -617,7 +619,7 @@ select option[value=""] {
     .page-banner {
         font-size: 2rem;
     }
-   
+
 }
 
 /* // Medium devices (tablets, 768px and up) */
@@ -626,6 +628,7 @@ select option[value=""] {
     .logo-txt {
         font-size: 7.5rem;
     }
+
     .page-banner {
         font-size: 3rem;
     }

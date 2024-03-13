@@ -12,19 +12,18 @@
     <div class="row">
         <div class="col-12">
             <div class="">
-                <h1 class="page-banner white">De-Bait Blog</h1>
+                <h1 class="page-banner white">De-Bait</h1>
             </div>
         </div>
     </div>
 </div>
 
 <div class="row pb-5">
-    <div class="col-12 col-md-8 offset-md-2 pb-5">
+    <div class="col-10 offset-1 col-md-8 offset-md-2 pt-5 pb-5">
         <h1 class="text-center">{{ post.title }}</h1>
-        <p><strong>Author:</strong> {{ post.author }}</p>
-        <p><strong>Publication Date:</strong> {{ post.publication_date }}</p>
-        <p><strong>Content:</strong></p>
-        <p>{{ post.content }}</p>
+        <p class="text-center"><strong>Author:</strong> {{ post.author }}</p>
+        <p class="text-center"><strong>Publication Date:</strong> {{ post.publication_date }}</p>
+        <p>{{ post.content | safe }}</p>
     </div>
 </div>
 {% endblock %}

@@ -61,3 +61,15 @@ def edit_post(request, slug):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/edit_post.html', {'form': form, 'post': post})
+
+
+@login_required
+def delete_post(request, slug):
+    """View to delete an existing blog post."""
+    post = get_object_or_404(Post, slug=slug)
+    if not request.user.is_superuser:
+        messages.error(request, "You do not have permission to access this page.")
+        return redirect('post_detail', slug=post.slug)
+    post.delete()
+    messages.success(request, 'Post deleted.')
+    return redirect('post_list')

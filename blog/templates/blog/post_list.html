@@ -41,7 +41,7 @@
                         <small class="ml-3 text-end">
                             <a href="{% url 'create_post' %}">Create</a>
                             <a href="{% url 'edit_post' post.slug %}">Edit</a>
-                            <a class="red" href="">Delete</a>
+                            <a class="red" href="{% url 'delete_post' post.slug %}">Delete</a>
                         </small>
                         {% endif %}
                     </div>

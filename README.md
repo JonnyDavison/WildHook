@@ -23,7 +23,7 @@ WildHook was born from a love for fishing and a deep appreciation for the wild, 
       - [Long-Tail Keywords](#long-tail-keywords)
       - [Competitive Analysis](#competitive-analysis)
       - [Conclusion](#conclusion)
-
+  * [Marketing Strategies](#marketing-strategies)
   * [UX](#ux)
     + [Brand Guidelines](#brand-guidelines)
     + [Scope](#scope)
@@ -81,7 +81,7 @@ WildHook is a B2C-focused e-commerce platform specialising in fishing gear and a
 - **Mobile Accessibility:**
    - Optimise the website for mobile devices, ensuring accessibility and seamless functionality across various platforms to accommodate the mobile-centric behaviour of modern consumers.
 
-**Marketing Strategies:**
+### Marketing Strategies:
 
 - **Content Marketing:**
    - Develop high-quality content such as blog posts, videos, and social media posts focused on fishing tips, techniques, and product reviews to attract and engage the target audience.

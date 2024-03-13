@@ -16,7 +16,7 @@ html {
 body {
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
-    margin-bottom: 300px;
+    margin-bottom: 250px;
 }
 
 a {
@@ -240,7 +240,7 @@ a {
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
-    height: 300px;
+    /* height: 300px; */
 }
 
 /* Sticky footer style and color
@@ -542,6 +542,20 @@ select option[value=""] {
     border-radius: 0;
 }
 
+/* MAILCHIMP */
+
+
+#mc_embed_signup {
+    background:#0D3D6D;
+    clear:left; 
+    font:14px Helvetica,Arial,sans-serif; 
+    width: px;
+}
+
+.mailchimp {
+    max-height: 300px;
+}
+
 
 
 /* MEDIA QUERIES */
@@ -586,10 +600,6 @@ select option[value=""] {
    
     body {
         margin-bottom: 500px;
-    }
-
-    .footer {
-        height: 500px;
     }
 
     .page-banner {

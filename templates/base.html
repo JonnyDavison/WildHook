@@ -78,13 +78,13 @@
               <span class="clearfix d-sm-inline-block"> My Profile </span>
             </a>
           </li>
-            {% if request.user.is_superuser %}
-              <li class="nav-item">
-                <a class="nav-link blue" href="{% url 'add_product' %}">
-                  <span class="clearfix d-sm-inline-block">Admin</span>
-                </a>
-              </li>
-            {% endif %}
+          {% if request.user.is_superuser %}
+          <li class="nav-item">
+            <a class="nav-link blue" href="{% url 'add_product' %}">
+              <span class="clearfix d-sm-inline-block">Admin</span>
+            </a>
+          </li>
+          {% endif %}
           <li class="nav-item">
             <a href="{% url 'bag' %}" class="nav-link blue">
               <span class="badge z-depth-1 mr-1 bg-yellow blue">
@@ -161,15 +161,18 @@
   {% block content %}
 
   {% endblock %}
-  <footer class="footer bg-blue">
-    <div class="container">
+  <footer class="footer bg-blue pt-1">
+    <div class="container pt-5">
       <div class="row">
         <div class="col-md-5 ">
           <h5><i class="fa-regular fa-copyright"></i> WildHook | 2024</h5>
           <div class="row">
             <div class="col-6">
               <ul class="list-unstyled">
+                <p>Useful Links</p>
                 <li><a href="{% url 'products' %}">All Products</a></li>
+                <li><a href="{% url 'products' %}">Privacy Statement</a></li>
+
                 {% if request.user.is_authenticated %}
                 <li><a href="{% url 'bag' %}">Checkout</a></li>
                 <li><a href="{% url 'profile' %}">My Profile</a></li>
@@ -181,39 +184,77 @@
             </div>
             <div class="col-6">
               <ul class="list-unstyled">
-                <li><a href="">xx</a></li>
-                <li><a href="">xx</a></li>
-                <li><a href="">xx</a></li>
-                <li><a href="">xx</a></li>
+                <p>Who we work with</p>
+                <li><a href="https://www.orvis.co.uk/" target="_blank">Orvis</a></li>
+                <li><a href="https://farbank.com/pages/sage" target="_blank">Sage</a></li>
+                <li><a href="https://fish.shimano.com/en-SG" target="_blank">Shimano</a></li>
+                <li><a href="https://savage-gear.com/" target="_blank">Savage gear</a></li>
               </ul>
             </div>
           </div>
           <ul class="nav">
-            <li class="nav-item"><a href="" class="white nav-link pl-0"><i class="fa fa-facebook fa-lg"></i></a></li>
-            <li class="nav-item"><a href="" class="white nav-link"><i class="fa fa-twitter fa-lg"></i></a></li>
-            <li class="nav-item"><a href="" class="white nav-link"><i class="fa fa-github fa-lg"></i></a></li>
-            <li class="nav-item"><a href="" class="white nav-link"><i class="fa fa-instagram fa-lg"></i></a></li>
+            <li class="nav-item"><a href="" target="_blank" class="white nav-link pl-0" rel="noopener"><i
+                  class="fa fa-facebook fa-lg"></i></a></li>
+            <li class="nav-item"><a href="" target="_blank" class="white nav-link" rel="noopener"><i
+                  class="fa fa-twitter fa-lg"></i></a></li>
+            <li class="nav-item"><a href="" target="_blank" class="white nav-link" rel="noopener"><i
+                  class="fa fa-github fa-lg"></i></a></li>
+            <li class="nav-item"><a href="" target="_blank" class="white nav-link" rel="noopener"><i
+                  class="fa fa-instagram fa-lg"></i></a></li>
           </ul>
           <br>
         </div>
         <div class="col-md-2">
-          <h5 class="text-md-right">Contact Us</h5>
+          <h5 class="text-md-right">Sign up to our newsletter</h5>
           <hr>
         </div>
         <div class="col-md-5">
-          <form>
-            <fieldset class="form-group">
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-            </fieldset>
-            <fieldset class="form-group">
-              <textarea class="form-control" id="exampleMessage" placeholder="Message"></textarea>
-            </fieldset>
-            <fieldset class="form-group text-xs-right">
-              <button type="button" class="btn btn-light-outline btn-lg white">Send</button>
-            </fieldset>
-          </form>
+
+          <div id="mc_embed_shell mailchimp">
+            <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+
+            <div id="mc_embed_signup">
+              <form
+                action="https://herokuapp.us18.list-manage.com/subscribe/post?u=53e80fd4c798810204052c571&amp;id=d069750c02&amp;f_id=0001c5e0f0"
+                method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+                target="_blank">
+                <div class="mc-field-group"><label for="mce-FNAME">First Name </label><input type="text" name="FNAME"
+                    class=" text" id="mce-FNAME" value=""></div>
+                <div class="mc-field-group white"><label for="mce-EMAIL">Email Address <span
+                      class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email"
+                    id="mce-EMAIL" required="" value=""><span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+                </div>
+                
+                <div id="mce-responses" class="clear foot">
+                  <div class="response" id="mce-error-response" style="display: none;"></div>
+                  <div class="response" id="mce-success-response" style="display: none;"></div>
+                </div>
+                <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                  /* real people should not fill this in and expect good things - do not remove this or risk form bot
+                  signups */
+                  <input type="text" name="b_53e80fd4c798810204052c571_d069750c02" tabindex="-1" value="">
+                </div>
+                <div class="optionalParent">
+                  <div class="clear foot">
+                    <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                    <p style="margin: 0px auto;"><a href="http://eepurl.com/iLZA8A"
+                        title="Mailchimp - email marketing made easy and fun"><span
+                          style="display: inline-block; background-color: transparent; border-radius: 4px;"><img
+                            class="refferal_badge"
+                            src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg"
+                            alt="Intuit Mailchimp"
+                            style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a>
+                    </p>
+                  </div>
+                </div>
+            </div>
+            </form>
+          </div>
+          
         </div>
+
       </div>
+    </div>
     </div>
   </footer>
 
@@ -223,6 +264,27 @@
       $(".toast").toast('show');
     });
   </script>
+
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+<script type="text/javascript">
+  (function ($) {
+    window.fnames = new Array();
+    window.ftypes = new Array();
+    fnames[0] = 'EMAIL';
+    ftypes[0] = 'email';
+    fnames[1] = 'FNAME';
+    ftypes[1] = 'text';
+    fnames[2] = 'LNAME';
+    ftypes[2] = 'text';
+    fnames[3] = 'ADDRESS';
+    ftypes[3] = 'address';
+    fnames[4] = 'PHONE';
+    ftypes[4] = 'phone';
+    fnames[5] = 'BIRTHDAY';
+    ftypes[5] = 'birthday';
+  }(jQuery));
+  var $mcj = jQuery.noConflict(true);
+</script>
   {% endblock %}
 </body>
 

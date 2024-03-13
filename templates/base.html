@@ -6,6 +6,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords"
+    content="Irish Fishing supplies, Fishing Ireland, Fishing, tackle, fishing tackle, fly rod, sea fishing, river fishing, reels, rod">
+  <meta name="description"
+    content="Welcome to WildHook, where the thrill of fishing meets the untamed spirit of the great outdoors. We are your premier destination for top-quality fishing tackle and accessories, designed to elevate your angling experience to new heights.">
+  <meta property=”og:description” content="Welcome to WildHook, where the thrill of fishing meets the untamed spirit of the great outdoors. We are your premier destination for top-quality fishing tackle and accessories, designed to elevate your angling experience to new heights."/>
   <title>WildHook | Irish Fishing Supplies</title>
 
   <!-- core css -->
@@ -171,7 +176,7 @@
               <ul class="list-unstyled">
                 <p>Useful Links</p>
                 <li><a href="{% url 'products' %}">All Products</a></li>
-                <li><a href="{% url 'privacy' %}">Cookie Policy</a></li>
+                <li><a href="{% url 'privacy' %}">Privacy Policy</a></li>
 
                 {% if request.user.is_authenticated %}
                 <li><a href="{% url 'bag' %}">Checkout</a></li>
@@ -224,7 +229,7 @@
                       class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email"
                     id="mce-EMAIL" required="" value=""><span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
                 </div>
-                
+
                 <div id="mce-responses" class="clear foot">
                   <div class="response" id="mce-error-response" style="display: none;"></div>
                   <div class="response" id="mce-success-response" style="display: none;"></div>
@@ -250,7 +255,7 @@
             </div>
             </form>
           </div>
-          
+
         </div>
 
       </div>
@@ -265,26 +270,26 @@
     });
   </script>
 
-<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-<script type="text/javascript">
-  (function ($) {
-    window.fnames = new Array();
-    window.ftypes = new Array();
-    fnames[0] = 'EMAIL';
-    ftypes[0] = 'email';
-    fnames[1] = 'FNAME';
-    ftypes[1] = 'text';
-    fnames[2] = 'LNAME';
-    ftypes[2] = 'text';
-    fnames[3] = 'ADDRESS';
-    ftypes[3] = 'address';
-    fnames[4] = 'PHONE';
-    ftypes[4] = 'phone';
-    fnames[5] = 'BIRTHDAY';
-    ftypes[5] = 'birthday';
-  }(jQuery));
-  var $mcj = jQuery.noConflict(true);
-</script>
+  <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+  <script type="text/javascript">
+    (function ($) {
+      window.fnames = new Array();
+      window.ftypes = new Array();
+      fnames[0] = 'EMAIL';
+      ftypes[0] = 'email';
+      fnames[1] = 'FNAME';
+      ftypes[1] = 'text';
+      fnames[2] = 'LNAME';
+      ftypes[2] = 'text';
+      fnames[3] = 'ADDRESS';
+      ftypes[3] = 'address';
+      fnames[4] = 'PHONE';
+      ftypes[4] = 'phone';
+      fnames[5] = 'BIRTHDAY';
+      ftypes[5] = 'birthday';
+    }(jQuery));
+    var $mcj = jQuery.noConflict(true);
+  </script>
   {% endblock %}
 </body>
 

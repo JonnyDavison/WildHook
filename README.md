@@ -11,6 +11,19 @@ WildHook was born from a love for fishing and a deep appreciation for the wild, 
 ## Table of contents
   * [Overview](#overview)
     + [Business Model](#business-model)
+    + [Keyword Research](#keyword-research)
+      - [Target Audience](#target-audience)
+      - [Brand Focus](#brand-focus)
+      - [Keyword Categories](#keyword-categories)
+        + [Fishing Tackle](#1-fishing-tackle)
+        + [Irish Fishing Keywords](#2-irish-fishing-keywords)
+        + [Product Keywords](#3-product-keywords)
+        + [Geographical Keywords](#4-geographical-keywords)
+        + [Activity Keywords](#5-activity-keywords)
+      - [Long-Tail Keywords](#long-tail-keywords)
+      - [Competitive Analysis](#competitive-analysis)
+      - [Conclusion](#conclusion)
+
   * [UX](#ux)
     + [Brand Guidelines](#brand-guidelines)
     + [Scope](#scope)
@@ -90,6 +103,100 @@ WildHook is a B2C-focused e-commerce platform specialising in fishing gear and a
 
 - **Promotions and Discounts:**
    - Run seasonal promotions, discounts, and loyalty rewards programmes to incentivise repeat purchases, increase customer retention, and stimulate sales during peak fishing seasons.
+
+
+## Keyword Research
+
+### Target Audience:
+- Fishing enthusiasts
+- Anglers of all skill levels
+- Individuals interested in outdoor activities
+- Customers in Ireland and the UK
+
+### Brand Focus:
+- Fishing tackle and equipment
+- Quality products at affordable prices
+- Wild, rugged, and adventurous brand image
+- Irish roots and heritage
+
+### Keyword Categories:
+
+#### 1. Fishing Tackle:
+- Fishing rods
+- Fishing reels
+- Fishing lures
+- Fishing lines
+- Fishing hooks
+- Fishing tackle boxes
+- Fishing accessories
+
+#### 2. Irish Fishing Keywords:
+- Fishing in Ireland
+- Irish fishing tackle
+- Fishing spots in Ireland
+- Irish angling gear
+- Irish fishing brands
+- Wild fishing Ireland
+
+#### 3. Product Keywords:
+- Quality fishing tackle
+- Affordable fishing gear
+- Top fishing brands
+- Best fishing equipment
+- Fishing gear deals
+- Fishing tackle sales
+
+#### 4. Geographical Keywords:
+- Fishing tackle UK
+- Fishing equipment Ireland
+- Fishing gear Dublin
+- Tackle shop Belfast
+- Fishing supplies Cork
+- Angling store Galway
+
+#### 5. Activity Keywords:
+- Fly fishing equipment
+- Sea fishing gear
+- River fishing tackle
+- Shore fishing accessories
+- Deep sea fishing tackle
+- Boat fishing equipment
+
+### Long-Tail Keywords:
+
+1. "Best fishing rods for trout fishing in Ireland"
+2. "Affordable sea fishing reels for beginners"
+3. "Quality fly fishing lures for wild trout"
+4. "Top fishing brands in the UK"
+5. "Where to buy fishing tackle near me in Ireland"
+6. "Irish-made fishing accessories for sale"
+7. "WildHook fishing gear reviews"
+8. "Expert tips for river fishing in Ireland"
+9. "Irish-themed fishing gifts for anglers"
+10. "How to choose the right fishing line for sea fishing"
+
+### Competitive Analysis:
+
+1. Analyze competitors' keywords and their search volumes
+2. Identify gaps in competitors' keyword strategies
+3. Focus on long-tail keywords specific to WildHook's offerings and brand identity
+4. Monitor keyword performance and adjust strategy accordingly
+
+### Conclusion:
+
+By incorporating a diverse range of keywords into WildHook's SEO strategy, we can effectively target the brand's audience while emphasizing its unique selling points and Irish heritage. Regular monitoring and optimization of keyword performance will ensure continued visibility and growth in search engine rankings.
+
+Top 10 key words selected for use: 
++ Fishing tackle
++ Irish fishing tackle
++ Quality fishing tackle
++ Top fishing brands
++ Best fishing equipment
++ Fishing gear deals
++ Fishing tackle sales
++ Fishing spots in Ireland
++ Wild fishing Ireland
++ Fly fishing equipment
 
 
 ## User Stories 

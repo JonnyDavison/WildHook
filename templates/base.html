@@ -11,6 +11,8 @@
   <meta name="description"
     content="Welcome to WildHook, where the thrill of fishing meets the untamed spirit of the great outdoors. We are your premier destination for top-quality fishing tackle and accessories, designed to elevate your angling experience to new heights.">
   <meta property=”og:description” content="Welcome to WildHook, where the thrill of fishing meets the untamed spirit of the great outdoors. We are your premier destination for top-quality fishing tackle and accessories, designed to elevate your angling experience to new heights."/>
+  {% block meta %} 
+  {% endblock %}
   <title>WildHook | Irish Fishing Supplies</title>
 
   <!-- core css -->
@@ -22,6 +24,8 @@
   {% endblock %}
   <!-- favicon -->
   <link rel="icon" type="image/x-icon" href="{{ MEDIA_URL }}favicon.ico">
+  <!-- Summer Note CSS -->
+  <link href="{% static 'django_summernote/summernote-bs4.css' %}" rel="stylesheet">
   <!-- core js -->
   <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -36,6 +40,8 @@
   <script src="https://kit.fontawesome.com/75b57bf907.js" crossorigin="anonymous"></script>
   <!-- Stripe js -->
   <script src="https://js.stripe.com/v3/"></script>
+  <!-- Summer Note js -->
+  <script src="{% static 'django_summernote/summernote-bs4.js' %}"></script>
 </head>
 
 <body>

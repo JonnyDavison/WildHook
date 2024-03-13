@@ -2,8 +2,9 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-{% block extra_css %}
-<link rel="stylesheet" href="">
+{% block meta %} 
+<meta name="description" content="{{ meta_description }}">
+<meta name="keywords" content="{{ meta_keywords }}">
 {% endblock %}
 
 
@@ -24,6 +25,13 @@
         <p class="text-center"><strong>Author:</strong> {{ post.author }}</p>
         <p class="text-center"><strong>Publication Date:</strong> {{ post.publication_date }}</p>
         <p>{{ post.content | safe }}</p>
+        {% if request.user.is_superuser %}
+            <small class="ml-3 text-end">
+                <a href="{% url 'create_post' %}">Create</a>
+                <a href="{% url 'edit_post' post.slug %}">Edit</a>
+                <a class="red" href="">Delete</a>
+            </small>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

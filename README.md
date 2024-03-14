@@ -28,7 +28,7 @@ WildHook was born from a love for fishing and a deep appreciation for the wild, 
     + [Brand Guidelines](#brand-guidelines)
     + [Scope](#scope)
     + [Structure](#structure)
-    + [Skeleton](#skeleton)
+    + [Wireframes](#wireframes)
     + [Design ](#design)
       - [Color Scheme](#color-scheme)
       - [Fonts](#fonts)
@@ -454,10 +454,10 @@ The WildHook website prioritizes a responsive design approach, ensuring optimal 
    - Section containing the product catalog categorized by type, brand, or fishing technique, allowing users to browse and filter based on their preferences.
 
 **Guides and Tips:**
-   - Dedicated section presenting fishing guides, tutorials, tips, and informative articles to educate and assist users in their fishing endeavors.
+   - Dedicated section, in teh form of a blog presenting fishing guides, tutorials, tips, and informative articles to educate and assist users in their fishing endeavors.
 
 **Community:**
-   - Community forum or platform for users to engage, share experiences, ask questions, and contribute to the fishing community.
+   - Community forum or platform for users to engage, by posting reviews, share experiences, ask questions, and contribute to the fishing community.
 
 **About Us:**
    - Page providing information about WildHook, its brand story, mission, values, and the team behind the brand.
@@ -469,16 +469,6 @@ The WildHook website prioritizes a responsive design approach, ensuring optimal 
    - Page featuring contact information, a contact form, and a map for users to get in touch with WildHook for inquiries and support.
 
 
-
-#### FLOWCHART
-The Flowchart  XYZ
-<br>
-<img>
-<br><br>
-
-
-### Skeleton
-<hr>
 
 ## Wireframes
 <br>
@@ -511,11 +501,6 @@ Wire frames have been created using [Figma](https://www.figma.com/)
 </details>
 
 <details> 
-  <summary>Product Sorting</summary> 
-  <img src='media/wireframes/productSort_wf.png'>
-</details>
-
-<details> 
   <summary>Product Detail</summary> 
   <img src='media/wireframes/productDetail_wf.png'>
 </details>
@@ -536,11 +521,6 @@ Wire frames have been created using [Figma](https://www.figma.com/)
 </details>
 
 <details> 
-  <summary>Shipping Information</summary> 
-  <img src='media/wireframes/shipping_wf.png'>
-</details>
-
-<details> 
   <summary>Payment Details</summary> 
   <img src='media/wireframes/paymentDetail_wf.png'>
 </details>
@@ -555,22 +535,6 @@ Wire frames have been created using [Figma](https://www.figma.com/)
   <img src='media/wireframes/emailLogin_wf.png'>
 </details>
 
-<details> 
-  <summary>Social Login</summary> 
-  <img src='media/wireframes/socialLogin_wf.png'>
-</details>
-
-<br>
-
-**Database**
-<br>
-Initial Schema
-<img> make drop down
-
-<br>
-
-Final Schema
-<img> make drop down
 <br>
 
 
@@ -596,15 +560,11 @@ Final Schema
 
 ## Color Scheme
 ### Primary Colors
-- **Deep Forest Green (#00563F)**: Symbolizing the lush, green landscapes of Ireland and the natural essence of the brand.
-- **Slate Gray (#47525E)**: Providing a neutral, stable base that complements the primary green.
-
-### Accent Colors
-- **Earthy Brown (#8B5A2B)**: Adding an earthy tone, connecting with the outdoor and adventurous theme.
-- **Yale Blue (#0D3D6D)**: Infusing vibrancy, representing the aquatic environment of fishing.
-- **Gold Accent (#DAA520)**: Adding a touch of premium quality and sophistication.
-
-
+- **Blue (#0D3D6D)**: Symbolizing the deep shades of the Sea
+- **Yellow (#DAA520)**: Adding a touch of premium quality and sophistication.
+### Secondary Colors
+- **White (#ffffff)**: Clear, space allowing the products to shine
+- **Red (#a10303)**: Highlighting important information
 
 #### Fonts
 **Heading and Titles:**
@@ -612,12 +572,6 @@ Final Schema
 
 **Font Family:** Montserrat
    - **Description:** Montserrat is a modern, elegant font ideal for headings and titles, providing a clean and sleek look for a contemporary design.
-
-**Body Text and Buttons:**
-<br>
-
-**Font Family:** Lato
-   - **Description:** Lato is a highly legible and versatile font suitable for both body text and buttons. Its neutrality and clarity ensure readability across various screen sizes while maintaining a cohesive look.
 
 #### Other
 
@@ -629,47 +583,98 @@ This project was developed using the Agile methodology.
 User stories where created in GitHub issues, labeled and added to milestones as iterations. Each iteration contained a Kanban board which contained **To Do**, **In-Progress** and **Done**. 
 
 
-### Sprint Details
-
-* **Sprint 1**
-
-
-    <br>
-
-* **Sprint 2**
-   
-
- <br>
-
-* **Sprint 3**
-    
-* **Sprint 4** <br>
-    
-
-
 ## Features
 ### Existing Features
 #### Home Page
-#### About
-#### Products
-#### Product Detail
-#### Checkout
 
+The Home page serves as the first point of interaction for users, providing an overview of the brand identity and key offerings. It prominently displays the brand logo and tagline to establish brand recognition. A strategically placed call-to-action (CTA) encourages users to take specific actions, such as exploring products, signing up for newsletters, or accessing special promotions. Additionally, the Home page dynamically showcases the latest deals and promotions, enticing users to explore further.
+<br>
+
+#### Navigation
+The Navigation feature facilitates seamless movement throughout the website, ensuring an intuitive user experience. Users can easily navigate to different sections of the website, including product categories, blog posts, and account-related pages, through a well-organized menu system. Search functionality enables users to quickly locate specific products or content by entering relevant keywords. For registered users, the Navigation menu also provides options to log in or out of their accounts and access order history, enhancing user convenience and accessibility.
+<br>
+
+#### Products
+The Products section presents a comprehensive catalog of available products, catering to diverse user preferences. Users can browse through various product categories and subcategories, exploring detailed product listings. Advanced filtering and sorting options empower users to refine their search results based on specific criteria such as price range, product type, brand, and user ratings. Additionally, intuitive search functionality allows users to quickly find desired products by entering keywords or product attributes.
+<br>
+
+#### Product Detail
+The Product Detail page offers comprehensive information about individual products, enabling informed purchase decisions. Each product listing includes high-quality images, detailed descriptions, specifications, and pricing information. Users can view multiple images of the product from different angles to gain a better understanding of its appearance and features. Interactive elements allow users to select product options such as size, color, and quantity before adding items to their shopping cart. Detailed product reviews and ratings provide valuable insights from other customers, helping users assess product quality and suitability.
+<br>
+
+
+#### Shopping Bag
+The Shopping Bag feature provides users with a convenient overview of the items they have selected for purchase. Users can review the products in their shopping cart, including detailed information such as product names, prices, quantities, and subtotal amounts. Interactive controls allow users to adjust the quantity of individual items or remove them from the shopping cart as needed. Clear call-to-action buttons enable users to proceed to the checkout process seamlessly, ensuring a smooth shopping experience.
+<br>
+
+#### Checkout
+The Checkout process streamlines the payment and order completion workflow, facilitating secure transactions. Users are guided through a series of steps to enter shipping details, select shipping methods, and provide payment information. Clear progress indicators and form validation ensure that users can easily navigate through each step without encountering errors. Integration with secure payment gateways enables users to make payments using various payment methods, including credit/debit cards, digital wallets, or alternative payment options. Order confirmation and summary details are provided to users upon successful completion of the checkout process.
+<br>
+ 
+#### Blog
+The Blog section serves as a valuable resource for users, offering informative and engaging content on relevant topics. Users can access a diverse range of blog posts covering product reviews, industry trends, tips, tutorials, and lifestyle topics. Rich multimedia content, including articles, images, videos, and infographics, enhances the user experience and encourages active engagement. Blog posts are categorized and tagged for easy navigation, allowing users to discover content based on their interests and preferences. Regularly updated blog content not only enriches the user experience but also contributes to search engine optimization (SEO) efforts by driving organic traffic and improving website visibility.
+<br>
+ 
+#### Reviews
+The Reviews feature promotes user engagement and community interaction by enabling customers to share their opinions and experiences about products. Users can submit reviews and ratings for products they have purchased, providing valuable feedback for other potential buyers. Transparent user-generated reviews help build trust and credibility, influencing purchase decisions and fostering a sense of community among users. Product reviews may include detailed insights, pros and cons, user recommendations, and additional tips or suggestions. Social sharing options allow users to spread the word about their favorite products, further amplifying the brand's reach and reputation.
+<br>
+ 
 <hr>
 
 
 ### Future Feature Considerations
 
-#### Pre-order
+1. **Subscription Service**: Offer a subscription-based service where customers can receive exclusive deals, early access to new products, or premium content from the blog section for a monthly or yearly fee.
+
+2. **Personalized Recommendations**: Implement a recommendation engine that suggests products based on each customer's browsing and purchase history, preferences, and behavior on the website.
+
+3. **Loyalty Program**: Introduce a loyalty program where customers earn points for purchases and other actions on the website, which they can redeem for discounts, free products, or other rewards.
+
+4. **Live Chat Support**: Provide real-time customer support through a live chat feature, allowing customers to ask questions, get assistance with orders, and receive personalized recommendations.
+
+5. **User-Generated Content**: Allow customers to submit photos, and videos of products they've purchased, increasing the sense of community and social proof that can boost sales.
+
+6. **Mobile App**: Develop a mobile app for iOS and Android devices, providing a seamless shopping experience and allowing customers to receive push notifications about new products, promotions, and personalised offers and delivery.
+
+7. **Curated Collections**: Create curated collections or gift guides for special occasions, holidays, or specific themes, making it easier for customers to discover products and find the perfect gift.
+
+8. **International Expansion**: Expand the business to new international markets, offering localised websites, language options, and currency conversions to cater to a global customer base.
+
+9. **Same-Day Delivery**: Partner with local delivery services or establish fulfillment centers in key locations to offer same-day or next-day delivery options for customers, enhancing convenience and satisfaction.
+
+10. **In-Store Pickup**: Allow customers to purchase products online and pick them up in-store, to help with brick-and-mortar locations to provide a convenient and flexible shopping experience as well as double as fulfillment hubs of our own.
+
+11. **Social Media Integration**: Integrate social media features, such as shoppable posts, social login, and social sharing buttons, to leverage social networks for marketing, customer acquisition, and engagement.
+
+12. **Gift Cards**: Offer digital gift cards that customers can purchase and send to friends and family, expanding the customer base and driving additional revenue through gift card sales.
+
+13. **VIP Membership**: Introduce a VIP membership program with exclusive perks, such as VIP-only sales, free shipping, birthday gifts, and dedicated customer support, to incentivise repeat purchases and customer loyalty.
+
 
 <hr>
 
 
 ## Responsive Layout and Design
-Bootsrtap
+The WildHook website features a responsive layout and design, ensuring optimal user experience across various devices and screen sizes. Leveraging the power of Bootstrap 5 framework, the website effortlessly adapts to different viewport dimensions, providing seamless navigation and content accessibility.
 
-**Tested devices:**
- - Iphone etc etc
+Bootstrap 5, renowned for its robust grid system and mobile-first approach, forms the foundation of the website's responsive design. By incorporating responsive utility classes and components offered by Bootstrap, the website dynamically adjusts its layout and content presentation to suit the viewing environment.
+
+While Bootstrap 5 handles the bulk of the responsive design requirements, additional customizations and fine-tuning have been implemented through carefully crafted media queries. These media queries target specific breakpoints and device widths, allowing for precise control over element positioning, typography, and visual styling.
+
+Key features of the responsive layout include:
+
+- Fluid Grid System: The website's layout is based on a fluid grid system, ensuring consistent spacing and alignment of content elements across devices.
+- Flexible Components: Bootstrap 5 components such as navigation bars, cards, and forms automatically adjust their size and alignment to fit smaller screens without compromising usability.
+- Mobile-First Approach: Following the mobile-first paradigm, the website prioritizes the mobile viewing experience, ensuring that content is accessible and readable on smartphones and tablets.
+- Breakpoint Optimization: Media queries are strategically used to optimize the layout at different breakpoints, ensuring that content is displayed optimally on devices ranging from small smartphones to large desktop monitors.
+- Touch-Friendly Interactions: Interactive elements such as buttons, links, and menus are optimized for touch input, enhancing usability on touchscreen devices.
+- Image Optimization: Images are optimized for various resolutions and screen sizes, striking a balance between visual quality and page loading performance.
+- Accessibility Considerations: Efforts have been made to ensure that the website complies with accessibility standards, making it usable for users with disabilities and assistive technologies.
+
+Overall, the responsive layout and design of the WildHook website contribute to a seamless and engaging user experience, regardless of the device or platform used for access. By embracing responsive web design principles and leveraging modern frontend technologies, the website delivers a visually appealing and accessible interface that meets the diverse needs of users in today's digital landscape.
+
+
+
 
 ## Tools Used
 
@@ -691,7 +696,7 @@ Bootsrtap
 [Grammarly](https://app.grammarly.com/) - Spelling/Grammar checks
 <br>
 
-[Font Awesome](https://fontawesome.com/) - Icons/Buttons
+[Font Awesome](https://fontawesome.com/) - Icons
 <br>
 
 [Bootstrap](https://getbootstrap.com/) - Front-end toolkit
@@ -719,32 +724,150 @@ LightHouse - Performance testing
 <br>
 
 ### Python packages
+To run this project install the following dependencies. You can do this by running `pip3 install -r requirements.txt` in your command line.
 
-* django 
-* gunicorn 
-* dj-database-url
-* psycopg2
-* django-allauth
-* django-crispy-forms
+* asgiref==3.7.2
+* backports.zoneinfo==0.2.1;python_version<"3.9"
+* boto3==1.34.59
+* botocore==1.34.59
+* dj-database-url==0.5.0
+* Django==4.1
+* django-allauth==0.43.0
+* django-countries==7.2.1
+* django-crispy-forms==1.14.0
+* django-storages==1.14.2
+* django-summernote==0.8.20.0
+* gunicorn==21.2.0
+* jmespath==1.0.1
+* oauthlib==3.2.2
+* Pillow==10.1.0
+* psycopg2==2.9.7
+* PyJWT==2.8.0
+* pylint-django==2.5.5
+* pylint-plugin-utils==0.8.2
+* python3-openid==3.2.0
+* requests-oauthlib==1.3.1
+* s3transfer==0.10.0
+* sqlparse==0.4.4
+* stripe==8.5.0
+* urllib3==1.26.18
+* whitenoise==6.6.0
+
 
 ## Testing
 The testing documentation can be found at [TESTING.md](TESTING.md)
 
+
 ## Deployment
 
 ### Deploy on Heroku
+#### Project Deployment: Heroku
 
-
-## Credits
-### Content
-
-### Media
-Stock images where downloaded from [](https://www..com/).
+#### 1. Initial Setup on Heroku:
 <br>
-The home page background image was downloaded from 
+  Sign up or log in to Heroku.
+  On the main Heroku Dashboard, click 'New' > 'Create New App'.
+  Name your project (e.g., mont-adventures-pp5). Remember, the app name must be unique.
+  Choose a suitable region and then click 'Create app'.
 
-Licencing for using XXX images can be found [here](https://www..com/license/) and has been adhered to across the site
+#### 2. Setting Up the Database:
+<br>
+Navigate to the 'Resources' tab from the submenu.
+In the 'Add-ons' section, search for 'Heroku Postgres'.
+Select and add 'Heroku Postgres' as the database.
+Go to the 'Settings' tab, and within the 'Config Vars' section, copy the DATABASE_URL for later use.
+
+#### 3. Configuring Django App for Heroku:
+<br>
+Create a .env file at the root of your Django project.
+
+- DATABASE_URL=<your_database_url_from_heroku>
+- SECRET_KEY=<your_secret_key>
+- USE_AWS=<True>
+- AWS_ACCESS_KEY_ID=<your_key_id>
+- AWS_BUCKET_NAME=<your_bucket_name>
+- AWS_REGION_NAME=<your_region_name>
+- AWS_SECRET_ACCESS_KEY=<your_secret_access_key_id>
+- DEFAULT_FROM_EMAIL=<your_default_from_email_name>
+- EMAIL_HOST_PASS=<your_email_host_pass>
+- EMAIL_HOST_USER=<your_email_host_user>
+- STRIPE_PUBLIC_KEY=<your_stripe_public_key>
+- STRIPE_SECRET_KEY=<your_stripe_secret_key>
+- STRIPE_WH_SECRET=<your_stripe_wh_secret>
+
+Additionally you must add these variables to the Heroku under 'Config Vars'.
+
+Modify `settings.py` in your Django app:
+
+- Import dotenv and load .env with dotenv.load_dotenv().
+- Replace the default secret key with SECRET_KEY = os.environ.get('SECRET_KEY').
+- Update the databases section to connect to the Heroku Postgres: DATABASES = {'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))}.
+
+<br>
+
+#### 4. Setting Up AWS S3:
+- Visit AWS S3 and either sign in or create an account.
+- Create a new S3 bucket and note down the necessary configurations like AWS_S3_ENDPOINT_URL and AWS_STORAGE_BUCKET_NAME.
+- Add these configurations to your .env file.
+- Add these variables to Heroku 'Config Vars'.
+- Modify settings.py to configure AWS S3:
+- Add AWS configurations for static and media files.
+
+#### 5. Final Configurations:
+Link your templates directory in Heroku: TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates').
+Update the templates directory to TEMPLATES_DIR: 'DIRS': [TEMPLATES_DIR].
+Add your Heroku app to ALLOWED_HOSTS (format: app_name.herokuapp.com).
+Create three top-level directories in your project: media, static, templates.
+Add a Procfile at the top level and write: web: gunicorn PROJECT_NAME.wsgi.
+Commit and push your changes to GitHub.
+
+#### 6. Deploy on Heroku:
+In Heroku, go to the 'Deploy' tab.
+Deploy the branch manually and monitor the build logs for any issues.
+Once the build completes, you'll see a success message and a link to view the live site.
+Note: Replace placeholders like <your_database_url_from_heroku>, <your_secret_key>, <PROJECT_NAME> with actual values relevant to your project.
+
+Forking the Repository
+Forking the GitHub Repository allows you to have a copy of the original repository. This enables you to view or make changes without affecting the original content.
+
+#### To Fork the repository:
+
+- Log into GitHub or create an account.
+- Navigate to the repository.
+- At the top-right corner of the repository page, click on the "Fork" button.
+- A copy of the repository will now be available in your account.
+- Cloning the Repository
+- Cloning creates a local copy of the repository on your machine, allowing you to run and modify the project locally.
+
+#### To clone the repository:
+
+- Navigate to the repository
+- Click on the green "Code" button located at the top of the file list.
+- Choose the "Clone with HTTPS" option and copy the provided URL to your clipboard.
+- Open your code editor or terminal.
+- Go to the location where you want to clone the repository.
+- Type `git clone`, then paste the URL you copied.
+- Press Enter, and the repository will be cloned to your specified directory.
+
+
+## Credits & Acknowledgements
+A huge thank you to my family for the support and patience when I was rambling on about some code problem and they willingly nodded and agreed. 
+
+The CI student care team who were very helpful and supportive when things where going wrong else where for giving me the time I needed to pause and return to this project.
+
+The CI Tutoring team and the facilitation team for encouragement, support and assistance when I got stuck.
+
+### Images
+Stock images where downloaded from [Pexels](https://www.pexels.com/).
+<br>
+
+#### Resources 
+- Stack Overflow, general coding knowldge
+- W3Schools with logical breakdowns
+- Bootsrtap5 for fantastic documentation
+- Google because we couldn't code without it
 
 ### Code
+Acknowledgement must be made to the Brilliant Boutique-Ado walk thought that helped me in my understanding of Django immensely as well as providing code snippits and insight. 
 
-## Acknowledgements
+

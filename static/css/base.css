@@ -25,7 +25,7 @@ a {
 
 /* Color pallet */
 .yellow {
-    color: #DAA520;
+    color: #daa520;
 }
 
 .bg-yellow {
@@ -40,24 +40,8 @@ a {
     background-color: #0D3D6D;
 }
 
-.green {
-    color: #00563F;
-}
-
-.bg-green {
-    background-color: #00563F;
-}
-
-.brown {
-    color: #8B5A2B;
-}
-
-.bg-brown {
-    background-color: #8B5A2B;
-}
-
 .white {
-    color: white;
+    color: #ffffff;
 }
 
 .red {

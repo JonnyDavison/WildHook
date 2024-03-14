@@ -75,7 +75,7 @@
         </div>
     </div>
    
-    <div class="col-12  col-lg-5 offset-lg-1">
+    <div class="col-12  col-lg-5 offset-lg-1 pb-5 mb-5">
         <p class="text-muted">Please fill out the form, to complete your order.</p>
         <form action="{% url 'checkout' %}" method="POST" id="payment-form" data-secret="{{ client_secret }}">
             {% csrf_token %}
@@ -146,6 +146,10 @@
         </span>
     </h1>
 </div>
+<div class="row">
+    <div class="col pb-5 mb-5 d-xs-flex d-md-none"></div>
+</div>
+
 {% endblock %}
 
 {% block postloadjs %}

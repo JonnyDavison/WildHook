@@ -1,8 +1,7 @@
-<div class="toast messages-item-detail show toast-container border-0" data-autohide="false">
+<div id="toast1" class="toast messages-item-detail show toast-container border-0" data-autohide="false">
     <div class="w-100 toast-cap bg-yellow"></div>
     <div class="toast-header bg-white">
         <strong class="me-auto mt-0 pt-0">Success!</strong>
-        <button type="button" class="btn-close ms-2 me-1 close" data-bs-dismiss="toast" data-dismiss="toast" aria-label="Close"></button>
     </div>
     <div class="toast-body bg-white">
         <div class="row">
@@ -31,17 +30,10 @@
                     <span class="float-right">${{ total|floatformat:2 }}</span>
                 </p></strong>
                 {% if free_delivery_delta > 0 %}
-                    <p class="mb-0 p-2 bg-warning shadow-sm continue-btn btn text-center">
+                    <p class="mb-0 p-2 bg-warning shadow-sm text-center">
                         Spend <strong>${{ free_delivery_delta }}</strong> more to get free next day delivery!
                     </p>
                 {% endif %}
-                <a href="{% url 'checkout' %}" class="btn add-btn blue ms-2 w-100">
-                    <span class="text-uppercase">Secure Checkout</span>
-                    <span class="icon">
-                        <i class="fas fa-lock"></i>
-                    </span>
-                </a>
-
             </div>
         </div>
     {% endif %}

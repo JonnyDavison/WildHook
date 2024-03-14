@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="w-100 ">
+    <div class="row">
+        <div class="col-12">
+            <div class="">
+                <h1 class="page-banner white">Edit a review</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row pb-5">
+    <div class="col-10 offset-1 col-md-8 offset-md-2 pt-5 pb-5">
+        <h2>Edit Review for {{ product.name }}</h2>
+        <form method="post" action="{% url 'edit_review' review.id %}">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn shop-now-button">Update Review</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

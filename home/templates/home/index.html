@@ -3,62 +3,48 @@
 
 
 {% block content %}
-
-
-
 <div class="promotions">
     <div class="overlay">
         <h1 class="blue text-center">
-            Check out our latest stock below!
+            The thrill of fishing meets the untamed spirit of the great outdoors.
         </h1>
     </div>
     <div class="promo-section pb-3">
-        <div class="row d-none d-lg-flex">
-            <div class="col">
-                <div class="col d-flex justify-content-center">
-                    <div class="box">
-                        <span style="--i:1"><img src="{{ MEDIA_URL }}KarolinaGrabowska-pexels.webp" alt=""></span>
-                        <span style="--i:2"><img src="{{ MEDIA_URL }}KarolinaGrabowska-pexels.webp" alt=""></span>
-                        <span style="--i:3"><img src="{{ MEDIA_URL }}KarolinaGrabowska-pexels.webp" alt=""></span>
-                        <span style="--i:4"><img src="{{ MEDIA_URL }}KarolinaGrabowska-pexels.webp" alt=""></span>
-                        <span style="--i:5"><img src="{{ MEDIA_URL }}KarolinaGrabowska-pexels.webp" alt=""></span>
-                        <span style="--i:6"><img src="{{ MEDIA_URL }}KarolinaGrabowska-pexels.webp" alt=""></span>
-                        <span style="--i:7"><img src="{{ MEDIA_URL }}KarolinaGrabowska-pexels.webp" alt=""></span>
-                        <span style="--i:8"><img src="{{ MEDIA_URL }}KarolinaGrabowska-pexels.webp" alt=""></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row d-lg-none pb-5">
+        <div class="row pb-5">
 
             <div class="col-12 col-sm-6 col-md-4">
-                <div class="card">
-                    <img src="{{ MEDIA_URL }}KarolinaGrabowska-pexels.webp" class="card-img-top" alt="...">
+                <div class="card h-100 mb-5">
+                    <div class="ratio ratio-4x3">
+                    <img src="{{ MEDIA_URL }}pexels-gaspar-zaldo-11250834.webp" class="card-img-top" alt="Image from out latest blog post">
+                </div>
                     <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title">Join the De-bait!!</h5>
+                        <p class="card-text">5 Tips for Perfecting Your Cast</p>
+                        <a href="{% url 'post_list' %}" class="btn shop-now-button">Read Online</a>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4">
-                <div class="card">
-                    <img src="{{ MEDIA_URL }}KarolinaGrabowska-pexels.webp" class="card-img-top" alt="...">
+                <div class="card h-100 mb-5">
+                    <div class="ratio ratio-4x3">
+                    <img src="{{ MEDIA_URL }}greys_k4st_combo_1_1_2.webp" class="card-img-top" alt="Image of one of our latest products">
+                </div>
                     <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title">Shop Our New Arrivals</h5>
+                        <p class="card-text">Greys K4ST Fly Rod & Reel Combos</p>
+                        <a href="{% url 'products' %}?category=new_arrivals" class="btn shop-now-button">Shop</a>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4">
-                <div class="card">
-                    <img src="{{ MEDIA_URL }}KarolinaGrabowska-pexels.webp" class="card-img-top" alt="...">
+                <div class="card h-100 mb-5">
+                    <div class="ratio ratio-4x3">
+                        <img src="{{ MEDIA_URL }}greys_tail_fly_fishing_reel_4.webp" class="card-img-top" alt="New season river fishing gear">
+                    </div>
                     <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title">THe Fly Season starts here!</h5>
+                        <p class="card-text">All your new season River fishing needs!</p>
+                        <a href="{% url 'products' %}?category=river_fishing" class="btn shop-now-button">River Gear!</a>
                     </div>
                 </div>
             </div>

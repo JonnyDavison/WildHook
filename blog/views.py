@@ -26,6 +26,7 @@ def post_detail(request, slug):
         'post': post,
         'meta_keywords': meta_keywords,
         'meta_description': meta_description,
+        'queryset': queryset,
         
         }
     return render(request, 'blog/post_detail.html', context)
@@ -39,7 +40,10 @@ def create_post(request):
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Post added')
             return redirect('post_list')
+        else:
+            messages.error(request, 'Failed, please check form is valid.')
     else:
         form = PostForm()
     return render(request, 'blog/create_post.html', {'form': form})

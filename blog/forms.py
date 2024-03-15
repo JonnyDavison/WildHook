@@ -1,10 +1,12 @@
 from django import forms
+from .widgets import CustomClearableFileInput
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 from .models import Post
 
 class PostForm(forms.ModelForm):
+    
     class Meta:
         model = Post
         fields = ['title', 'image', 'content', 'author',
@@ -13,6 +15,8 @@ class PostForm(forms.ModelForm):
         widgets = {
             'content': SummernoteWidget(),
         }
+
+    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

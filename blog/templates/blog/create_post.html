@@ -19,7 +19,13 @@
     <div class="col-10 offset-1 col-md-8 offset-md-2 pt-5 pb-5">
         <form method="post" action="{% url 'create_post' %}">
             {% csrf_token %}
-            {{ form|crispy }}
+            {% for field in form %}
+                {% if field.name != 'image' %}
+                    {{ field | as_crispy_field }}
+                {% else %}
+                    {{ field }}
+                {% endif %}
+            {% endfor %}
             <button type="submit" class="btn shop-now-button">Save</button>
           </form>
     </div>

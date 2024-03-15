@@ -50,7 +50,7 @@
     <form method="post" action="{% url 'account_email' %}" class="add_email">
         {% csrf_token %}
         {{ form.as_p }}
-        <button name="action_add" type="submit">{% trans "Add E-mail" %}</button>
+        <button name="action_add" class="add-btn btn" type="submit">{% trans "Add E-mail" %}</button>
     </form>
 
 {% endblock %}
@@ -70,4 +70,9 @@
   }
 })();
 </script>
+
+<div class="row">
+  <div class="col pb-5 mb-5 d-xs-flex d-md-none"></div>
+</div>
+
 {% endblock %}

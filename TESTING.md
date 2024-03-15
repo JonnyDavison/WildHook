@@ -1,5 +1,8 @@
 # WildHook Testing Guide:
 
+## Overview 
+The testign ahs been split between automated and manual. All sections have been put through rigorous manual testing. Automated testing was carried out on two models details as below. The tests.py files are available in the directory of each App.
+
 ## Automated Testing Guide
 1. [Introduction](#introduction)
 2. [Products App Testing](#product-model-testing)
@@ -11,7 +14,6 @@
         - [Test Case: Product Model Default Has Sizes](#test-case-product-model-default-has-sizes)
         - [Test Case: Product Model Offer Price Nullable and Blank](#test-case-product-model-offer-price-nullable-and-blank)
         - [Test Case: Product Model Label Choices](#test-case-product-model-label-choices)
-        - [Test Case: Product Model Tag Choices](#test-case-product-model-tag-choices)
 3. [Conclusion](#conclusion) 
 4. [Automated testing for Blog App](#automated-testing-for-blog-app)
     - [Introduction](#introduction)
@@ -84,7 +86,7 @@ This document outlines the automated testing procedures and results for the mode
 - **Objective**: Ensure that the `label` field contains the correct choices.
 - **Setup**: Get the choices for the `label` field.
 - **Expected Result**: The `label` field should contain the choices specified in the `LABEL_CHOICES` constant.
-- **Result**: Test pas
+- **Result**: Test pass
 
 # Automated testing for Blog App
 # Automated Testing Documentation for WildHook Blog App
@@ -1023,3 +1025,6 @@ This section focuses on testing user interactions within the WildHook applicatio
 
 By testing at each stage of the shopping experience, we aimed to identify any potential issues or discrepancies and ensure a seamless and user-friendly interaction with the application.
 
+
+### Final Thoughts
+A stringent and rigorous testing was carried out across all sections of the build. This could be further improved with larger test groups, stress testing the website on scale. This would uncover any weakness in the development and allow a more robust app to be developed. Furthermore full automated testing for all Apps within the project will be developed in later iterations, increasing the quality, structure and security of WildHook.

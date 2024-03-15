@@ -1,5 +1,5 @@
 # WildHook
-<img src="" ><br>
+<img src="media/AmIResponsive.webp" ><br>
 Welcome to WildHook, where the thrill of fishing meets the untamed spirit of the great outdoors. We are your premier destination for top-quality fishing tackle and accessories, designed to elevate your angling experience to new heights.
 
 At WildHook, we understand that fishing isn't just a hobby; it's a passion, a way of life. Whether you're an experienced angler seeking the perfect catch or a beginner eager to explore the world of fishing, our brand is here to accompany you on your journey.
@@ -58,7 +58,7 @@ WildHook was born from a love for fishing and a deep appreciation for the wild, 
 WildHook is an ambitious online platform dedicated to passionate fishing enthusiasts in Ireland and the UK. Combining an intuitive e-commerce interface with rich educational content, we aim to provide a one-stop hub for all things fishing. Users can browse and purchase quality fishing gear, access informative guides and tips, engage with a vibrant fishing community, and streamline their experiences through personalized accounts. With a focus on responsive design and user engagement, WildHook aspires to redefine the online fishing experience, catering to both novice and experienced anglers.
 In order to achieve this WildHook has been developed using Python (Django), HTML, CSS and JavaScript PostgreSQL database.
 <br><br>
-The deployed project can be accessed at [here]().<br><br>
+The deployed project can be accessed at [here](https://wildhook-72f0fa2bfc47.herokuapp.com/).<br><br>
 
 ### Business Model
 **Business Model Overview:**
@@ -237,7 +237,8 @@ Top 10 key words selected for use:
 |                                       ||  |
 
 
-**Goal:** 
+
+### Goal 
 <br>
 WildHook was born from a love for fishing and a deep appreciation for the wild, rugged landscapes of Ireland and the UK. Our vision is simple yet powerful – to provide you with the tools and knowledge you need to make every fishing trip an unforgettable adventure.
 
@@ -473,7 +474,7 @@ The WildHook website prioritizes a responsive design approach, ensuring optimal 
 ## Wireframes
 <br>
 
-Wire frames have been created using [Figma](https://www.figma.com/)
+Wire frames have been created using [Figma](https://www.figma.com/). While the general Styling has remained the same there has been a few tweets along the way, inline with the Agile methodology followed. This will continue in the future as the design process continues, new technologies are discovered and the constant hunt for better UX/UI is pursued. 
 
 <details> 
   <summary>Home Page</summary> 
@@ -580,7 +581,7 @@ Wire frames have been created using [Figma](https://www.figma.com/)
 ## Agile
 This project was developed using the Agile methodology.
 <br>
-User stories where created in GitHub issues, labeled and added to milestones as iterations. Each iteration contained a Kanban board which contained **To Do**, **In-Progress** and **Done**. 
+User stories where created in GitHub issues, labeled and added to milestones as iterations. Each iteration contained a Kanban board which contained **To Do**, **In-Progress** and **Done**. This can be viewed [here](https://github.com/users/JonnyDavison/projects/13/views/1) 
 
 
 ## Features

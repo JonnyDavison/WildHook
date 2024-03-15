@@ -4,10 +4,11 @@ from django.urls import reverse
 from .models import Product, Category
 from .views import all_products, product_detail, add_product, edit_product, delete_product
 
-# MODEL TESTING 
+# MODEL TESTING
 class CategoryModelTestCase(unittest.TestCase):
     def setUp(self):
-        self.category = Category.objects.create(name='Test Category', friendly_name='Friendly Test Category')
+        self.category = Category.objects.create(name='Test Category',
+                                                friendly_name='Friendly Test Category')
 
     def tearDown(self):
         self.category.delete()

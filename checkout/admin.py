@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Order, OrderLineItem
 from django.contrib.admin.models import LogEntry
+from .models import Order, OrderLineItem
 
 class OrderLineItemAdminInline(admin.TabularInline):
     """ OrderlineItem registration """

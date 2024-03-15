@@ -1,18 +1,16 @@
+import json
 from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
-
-from .forms import OrderForm
-from .models import Order, OrderLineItem
-
+import stripe
 from products.models import Product
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from bag.contexts import bag_contents
+from .models import Order, OrderLineItem
+from .forms import OrderForm
 
-import stripe
-import json
 
 @require_POST
 def cache_checkout_data(request):
@@ -38,7 +36,7 @@ def checkout(request):
 
     if request.method =='POST':
         bag = request.session.get('bag', {})
-        
+
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],

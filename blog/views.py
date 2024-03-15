@@ -18,16 +18,15 @@ def post_list(request):
 def post_detail(request, slug):
     """View to display a detailed view of a blog post."""
     post = get_object_or_404(Post, slug=slug)
-    meta_keywords = post.meta_keywords 
-    meta_description = post.meta_description 
+    meta_keywords = post.meta_keywords
+    meta_description = post.meta_description
     queryset = Post.objects.filter()
-    
+
     context = {
         'post': post,
         'meta_keywords': meta_keywords,
         'meta_description': meta_description,
         'queryset': queryset,
-        
         }
     return render(request, 'blog/post_detail.html', context)
 

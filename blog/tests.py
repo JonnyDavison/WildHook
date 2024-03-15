@@ -1,7 +1,7 @@
 import unittest
 from django.contrib.auth.models import User
-from .models import Post
 from django.core.exceptions import ObjectDoesNotExist
+from .models import Post
 
 class PostModelTestCase(unittest.TestCase):
     @classmethod

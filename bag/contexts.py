@@ -33,7 +33,8 @@ def bag_contents(request):
         else:
             product = get_object_or_404(Product, pk=item_id)
             for size, quantity in item_data['items_by_size'].items():
-                price_to_use = product.offer_price if product.offer_price is not None else product.price
+                price_to_use = (product.offer_price if product.offer_price is not None
+                                else product.price)
                 total += quantity * price_to_use
                 product_count += quantity
                 saving = (product.price * quantity) - (price_to_use * quantity)

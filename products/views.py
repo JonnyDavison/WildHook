@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from .models import Product, Category
 from django.db.models.functions import Lower
+from .models import Product, Category
 from .forms import ProductForm
 
 
@@ -11,7 +11,7 @@ def all_products(request):
     """
     A view to return all Products page
     """
-    
+
     products = Product.objects.all()
     query = None
     categories = None

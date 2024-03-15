@@ -11,6 +11,6 @@ class Review(models.Model):
 
     def user_can_edit(self, user):
         return user == self.user or user.is_superuser
-    
+
     def __str__(self):
         return f"{self.user.username} - {self.product.name}"
